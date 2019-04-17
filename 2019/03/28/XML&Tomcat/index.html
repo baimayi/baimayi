@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>XML &amp; Tomcat | Baimawen&#39;s Blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="XML,Tomcat">
+    
+    <meta name="description" content="XML &amp;amp; Tomcat 被设计用来传输和存储数据  查看XML文件XMl文件中包含了许多的元素，XML格式的信息和其它标记的基本单元，以及各种各样的数据。 在所有的主流的浏览器中，均能够查看原始的XML文件 什么是XML 指可扩展标记语言（EXtendsible Markup Language） 是一种很像HTML的标记语言 设计宗旨是传输数据，而不是显示数据 标签没有被预定义，需要自行">
+<meta name="keywords" content="XML,Tomcat">
+<meta property="og:type" content="article">
+<meta property="og:title" content="XML &amp; Tomcat">
+<meta property="og:url" content="http://yoursite.com/2019/03/28/XML&Tomcat/index.html">
+<meta property="og:site_name" content="Baimawen&#39;s Blog">
+<meta property="og:description" content="XML &amp;amp; Tomcat 被设计用来传输和存储数据  查看XML文件XMl文件中包含了许多的元素，XML格式的信息和其它标记的基本单元，以及各种各样的数据。 在所有的主流的浏览器中，均能够查看原始的XML文件 什么是XML 指可扩展标记语言（EXtendsible Markup Language） 是一种很像HTML的标记语言 设计宗旨是传输数据，而不是显示数据 标签没有被预定义，需要自行">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/2019/03/28/XML&Tomcat/css/images/017.JPG">
+<meta property="og:updated_time" content="2019-03-28T17:55:13.760Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="XML &amp; Tomcat">
+<meta name="twitter:description" content="XML &amp;amp; Tomcat 被设计用来传输和存储数据  查看XML文件XMl文件中包含了许多的元素，XML格式的信息和其它标记的基本单元，以及各种各样的数据。 在所有的主流的浏览器中，均能够查看原始的XML文件 什么是XML 指可扩展标记语言（EXtendsible Markup Language） 是一种很像HTML的标记语言 设计宗旨是传输数据，而不是显示数据 标签没有被预定义，需要自行">
+<meta name="twitter:image" content="http://yoursite.com/2019/03/28/XML&Tomcat/css/images/017.JPG">
+    
+
+    
+        <link rel="alternate" href="/" title="Baimawen&#39;s Blog" type="application/atom+xml">
+    
+
+    
+        <link rel="icon" href="/css/images/017.JPG">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Spring/">Spring</a></li></ul>
+                                    
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/about/">关于</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Java/">Java</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-XML&amp;Tomcat" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        XML &amp; Tomcat
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/03/28/XML&Tomcat/" class="article-date">
+            <time datetime="2019-03-28T15:27:20.000Z" itemprop="datePublished">2019-03-28</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Tomcat/">Tomcat</a>, <a class="tag-link" href="/tags/XML/">XML</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="XML-amp-Tomcat"><a href="#XML-amp-Tomcat" class="headerlink" title="XML &amp; Tomcat"></a>XML &amp; Tomcat</h2><blockquote>
+<p>被设计用来传输和存储数据</p>
+</blockquote>
+<h3 id="查看XML文件"><a href="#查看XML文件" class="headerlink" title="查看XML文件"></a>查看XML文件</h3><p>XMl文件中包含了许多的元素，XML格式的信息和其它标记的基本单元，以及各种各样的数据。</p>
+<p>在所有的主流的浏览器中，均能够查看原始的XML文件</p>
+<h3 id="什么是XML"><a href="#什么是XML" class="headerlink" title="什么是XML"></a>什么是XML</h3><ul>
+<li>指可扩展标记语言（EXtendsible Markup Language）</li>
+<li>是一种很像HTML的标记语言</li>
+<li>设计宗旨是传输数据，而不是显示数据</li>
+<li>标签没有被预定义，需要自行定义</li>
+<li>被设计为具有自我描述性</li>
+</ul>
+<h3 id="和HTML的差异"><a href="#和HTML的差异" class="headerlink" title="和HTML的差异"></a>和HTML的差异</h3><ul>
+<li>XML是被设计用来传输和存储数据，其焦点是数据的内容</li>
+<li>HTML被设计用来显示数据，其焦点是数据的外观<blockquote>
+<p>XML用于传输数据，而HTML用于格式化并显示数据</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="定义XML"><a href="#定义XML" class="headerlink" title="定义XML"></a>定义XML</h3><ol>
+<li><p>文档声明<br>version：解析这个xml的时候，使用什么版本的解析器解析<br>encoding：解析xml中的文字的时候，使用什么编码来翻译<br> standalone：no - 该文档会依赖关联其它文档    yes - 这是一个独立的文档<br>&lt;?xml version=”1.0” encoding=”UTF-8” standalone=”no”?&gt;</p>
+</li>
+<li><p>使用CSS来格式化XML文档</p>
+</li>
+</ol>
+<p>&lt;?xml-stylesheet type=”text/css” href=”cd_catalog.css”?&gt;<br>使用CSS格式化XML不是常用的方法</p>
+<ol start="3">
+<li>使用XSLT显示XML</li>
+</ol>
+<p>通过使用XSLT，可以把XMl文档转换HTML格式</p>
+<blockquote>
+<p>XSLT是首选的XML样式表语言    (eXtensible Stylesheet Language Transformations)</p>
+</blockquote>
+<h3 id="XML命名规则"><a href="#XML命名规则" class="headerlink" title="XML命名规则"></a>XML命名规则</h3><ul>
+<li>名称可以包含字母、数字以及其它的字符</li>
+<li>名称不能以数字或者标点符号开始</li>
+<li>名称不能以字母xml（或者XML、Xml等等）开始</li>
+<li>名称不能包含空格</li>
+</ul>
+<h3 id="XML-DTD（Document-Type-Definition）文档类型定义"><a href="#XML-DTD（Document-Type-Definition）文档类型定义" class="headerlink" title="XML DTD（Document Type Definition）文档类型定义"></a>XML DTD（Document Type Definition）文档类型定义</h3><ul>
+<li>拥有正确语法的XMl被称为“形式良好”的XMl<ul>
+<li>文档必须有一个根元素</li>
+<li>元素都必须有一个关闭标签</li>
+<li>标签对大小写敏感</li>
+<li>元素必须被正确的嵌套</li>
+<li>属性值必须加双引号</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>DTD的作用</p>
+<ul>
+<li>DTD是一种保证XML文档格式正确的有效方法，可以通过比较XML文档和DTD文件来看文档是否符合规范，元素和标签使用是否正确</li>
+<li>XML文件提供应用程序一个数据交换的格式，DTD正是让XML能够成为数据交换的标准。</li>
+<li>DTD文件是一个ASCII的文本文件，后缀名为.dtd</li>
+</ul>
+</blockquote>
+<p>通过引入的方式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">文档类型   根标签名字   网络上的dtd    dtd的路径</span><br><span class="line">&lt;!DOCTYPE stus PUBLIC &quot;//UNKNOWN/&quot; &quot;unknown.dtd&quot;&gt;</span><br><span class="line"></span><br><span class="line">本地的为</span><br><span class="line">&lt;!DOCTYPE stus SYSTEM &quot;stus.dtd&quot;&gt;</span><br></pre></td></tr></table></figure></p>
+<p>直接在XML里面嵌入DTD的约束规则：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;!DOCTYPE stus [</span></span><br><span class="line"><span class="meta">    &lt;!ELEMENT stus (stu)&gt;</span></span><br><span class="line"><span class="meta">    &lt;!ELEMENT stu (name,age,address)&gt;</span></span><br><span class="line"><span class="meta">    &lt;!ELEMENT name (#PCDATA)&gt;</span></span><br><span class="line"><span class="meta">    &lt;!ELEMENT age (#PCDATA)&gt;</span></span><br><span class="line"><span class="meta">    &lt;!ELEMENT address (#PCDATA)&gt;</span></span><br><span class="line"><span class="meta">]&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">stus</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">stu</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">name</span>&gt;</span>李四<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">age</span>&gt;</span>12<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">address</span>&gt;</span>武汉<span class="tag">&lt;/<span class="name">address</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">stu</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">stus</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="XML-Schema"><a href="#XML-Schema" class="headerlink" title="XML Schema"></a>XML Schema</h3><p>约束文档<br><figure class="highlight xsd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- xmlns-&gt;xml namespace 命名空间 </span></span><br><span class="line"><span class="comment">目标名称空间，下面的那些元素都与这个命名空间绑定上 </span></span><br><span class="line"><span class="comment">targetNamespace="http://www.example.org/teacher" </span></span><br><span class="line"><span class="comment">元素的格式化情况 </span></span><br><span class="line"><span class="comment">elementFormDefault="qualified"&gt; --&gt;</span></span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line"><span class="tag">&lt;<span class="name">schema</span> <span class="attr">xmlns</span>=<span class="string">"http://www.w3.org/2001/XMLSchema"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">targetNamespace</span>=<span class="string">"http://www.example.org/teacher"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xmlns:tns</span>=<span class="string">"http://www.example.org/teacher"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">elementFormDefault</span>=<span class="string">"qualified"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">element</span> <span class="attr">name</span>=<span class="string">"teachers"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">complexType</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">sequence</span> <span class="attr">maxOccurs</span>=<span class="string">"unbounded"</span>&gt;</span></span><br><span class="line">				<span class="comment">&lt;!-- 这是一个复杂元素 --&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">element</span> <span class="attr">name</span>=<span class="string">"teacher"</span>&gt;</span></span><br><span class="line">					<span class="comment">&lt;!-- 这是用于声明teacher元素是复杂元素 --&gt;</span></span><br><span class="line">					<span class="tag">&lt;<span class="name">complexType</span>&gt;</span></span><br><span class="line">						<span class="tag">&lt;<span class="name">sequence</span>&gt;</span></span><br><span class="line">							<span class="comment">&lt;!-- 以下两个是简单元素 --&gt;</span></span><br><span class="line">							<span class="tag">&lt;<span class="name">element</span> <span class="attr">name</span>=<span class="string">"name"</span> <span class="attr">type</span>=<span class="string">"string"</span>&gt;</span><span class="tag">&lt;/<span class="name">element</span>&gt;</span></span><br><span class="line">							<span class="tag">&lt;<span class="name">element</span> <span class="attr">name</span>=<span class="string">"age"</span> <span class="attr">type</span>=<span class="string">"int"</span>&gt;</span><span class="tag">&lt;/<span class="name">element</span>&gt;</span></span><br><span class="line">						<span class="tag">&lt;/<span class="name">sequence</span>&gt;</span></span><br><span class="line">					<span class="tag">&lt;/<span class="name">complexType</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;/<span class="name">element</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">sequence</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">complexType</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">element</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">schema</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>实例文档<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- xmlns:xsi 必须是这样的写法，也就是这个值固定了 xmlns 这里是命名空间，也固定了，写的是schema里面的顶部目标命名空间 </span></span><br><span class="line"><span class="comment">	xsi:schemaLocation 有两段，前面是命名空间，也就是目标空间的值，后面是约束文档的路径 --&gt;</span></span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line"><span class="tag">&lt;<span class="name">teachers</span> <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xmlns</span>=<span class="string">"http://www.w3.org/2001/XMLSchema"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xsi:schemaLocation</span>=<span class="string">"http://www.w3.org/2001/XMLSchema teacher.xsd"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">teacher</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">name</span>&gt;</span>z<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">age</span>&gt;</span>12<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">teacher</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">teacher</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">name</span>&gt;</span>z<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">age</span>&gt;</span>12<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">teacher</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">teachers</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="命名空间的作用"><a href="#命名空间的作用" class="headerlink" title="命名空间的作用"></a>命名空间的作用</h4><p>一个xml如果想指定它的约束规则，假设使用的是DTD，那么这个xml只能指定一个DTD</p>
+<p>但是如果一个xml的约束是定义在schema里面，并且是多个schema，那么是可以的。</p>
+<p>简单来说：一个xml可以引用多个schema约束，但是只能引用一个DTD约束。</p>
+<p>名称空间的作用就是在写元素的时候，可以指定该元素使用的是哪一套约束规则。</p>
+<p>默认情况下，如果只有一套规则，那么都可以这么写。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>zhangsan<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">aa:name</span>&gt;</span><span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bb:name</span>&gt;</span><span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="XMl解析方式"><a href="#XMl解析方式" class="headerlink" title="XMl解析方式"></a>XMl解析方式</h3><blockquote>
+<p>DOM：document object model</p>
+</blockquote>
+<p>把整个xml全部读到内从当中，形成树状结构。</p>
+<ul>
+<li>整个文档称之为document对象</li>
+<li>属性对应Attribute对象</li>
+<li>所有的元素节点对应Element对象</li>
+<li>文本称之为Text对象</li>
+<li>以上所有对象都可称之为Node节点</li>
+</ul>
+<blockquote>
+<p>SAX：Simple API for Xml</p>
+</blockquote>
+<p>基于事件驱动</p>
+<p>不可以进行增删，只能查询</p>
+<h3 id="Dom4j-基本用法"><a href="#Dom4j-基本用法" class="headerlink" title="Dom4j 基本用法"></a>Dom4j 基本用法</h3><p>element.element(“stu”);        返回该元素下的第一个stu元素<br>element.elements();        返回该元素下的所有子元素</p>
+<ol>
+<li>创建SaxReader对象</li>
+<li>指定解析的xml</li>
+<li>获取根元素</li>
+<li>根据根元素获取子元素或者下面的子孙元素</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">			<span class="comment">// 1. 创建sax读取对象</span></span><br><span class="line">			SAXReader reader = <span class="keyword">new</span> SAXReader();</span><br><span class="line">			</span><br><span class="line">			<span class="comment">// 2. 指定解析的xml文件</span></span><br><span class="line">			Document document = reader.read(<span class="keyword">new</span> File(<span class="string">"src/xml/stus.xml"</span>));</span><br><span class="line">			</span><br><span class="line">			<span class="comment">// 3. 得到元素</span></span><br><span class="line">			Element rootElement = document.getRootElement();</span><br><span class="line">			String name = rootElement.element(<span class="string">"stu"</span>).element(<span class="string">"name"</span>).getStringValue();</span><br><span class="line">			<span class="comment">//System.out.println(name);</span></span><br><span class="line">			</span><br><span class="line">			<span class="comment">// 获取根元素下的所有元素</span></span><br><span class="line">			List&lt;Element&gt; elements = rootElement.elements();</span><br><span class="line">			<span class="keyword">for</span> (Element element : elements) &#123;</span><br><span class="line">				String value1 = element.getStringValue();</span><br><span class="line">				String value2 = element.element(<span class="string">"name"</span>).getText();</span><br><span class="line">				System.out.println(value2);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			<span class="comment">// <span class="doctag">TODO:</span> handle exception</span></span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Dom4j的Xpath使用"><a href="#Dom4j的Xpath使用" class="headerlink" title="Dom4j的Xpath使用"></a>Dom4j的Xpath使用</h4><ol>
+<li>添加jar包依赖        jaxen-1.1-beta-6.jar</li>
+<li>在查找指定节点的时候，根据Xpath语法规则来查找</li>
+<li>后续的代码与以前的解析一样</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 要想使用Xpath，还得添加支持的jar:jaxen</span></span><br><span class="line"><span class="comment">// 获取的是第一个，只返回一个</span></span><br><span class="line">Element nameElement = (Element) rootElement.selectSingleNode(<span class="string">"//name"</span>);</span><br><span class="line">System.out.println(nameElement.getName());</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取文档里面的所有name元素</span></span><br><span class="line">List&lt;Element&gt; list = rootElement.selectNodes(<span class="string">"//name"</span>);</span><br><span class="line"><span class="keyword">for</span> (Element element : list) &#123;</span><br><span class="line">	System.out.println(element.getText());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Tomcat目录"><a href="#Tomcat目录" class="headerlink" title="Tomcat目录"></a>Tomcat目录</h2><p>bin<br>    包含了一些jar，bat文件    startup.bat</p>
+<p>conf<br>    tomcat的配置    server.xml    web.xml</p>
+<p>lib<br>    tomcat运行所需的jar文件</p>
+<p>logs<br>    运行的日志文件</p>
+<p>temp<br>    临时文件</p>
+<p>webapps<br>    发布到tomcat服务器上的项目</p>
+<p>work<br>    jsp翻译成class文件存放地</p>
+<h3 id="配置虚拟路径"><a href="#配置虚拟路径" class="headerlink" title="配置虚拟路径"></a>配置虚拟路径</h3><ol>
+<li>在conf/server.xml    找到Host元素节点</li>
+<li><p>加入以下内容</p>
+ <!-- docBase:项目的路径地址
+ path：对应的虚拟路径    一定要以/开始
+ -->
+ <context docbase="D:\xml02" path="/a"></context>
+
+</li>
+</ol>
+<p>OR</p>
+<ol>
+<li>在tomcat/conf/catalina/localhost/ 文件夹下新建一个xml文件，名字自定义</li>
+<li>在这个文件里面写入<br> &lt;?xml version=”1.0” encoding=”UTF-8”?&gt;<br> <context docbase="D:\xml02"></context><br>访问：<a href="http://localhost:8080/person/xml名字即可" target="_blank" rel="noopener">http://localhost:8080/person/xml名字即可</a></li>
+</ol>
+
+        </div>
+        <footer class="article-footer">
+            
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "白马文"
+        },
+        "headline": "XML &amp; Tomcat",
+        "image": "http://yoursite.comcss/images/017.JPG",
+        "keywords": "XML Tomcat",
+        "genre": "Java",
+        "datePublished": "2019-03-28",
+        "dateCreated": "2019-03-28",
+        "dateModified": "2019-03-29",
+        "url": "http://yoursite.com/2019/03/28/XML&Tomcat/",
+        "description": "XML &amp; Tomcat
+被设计用来传输和存储数据
+
+查看XML文件XMl文件中包含了许多的元素，XML格式的信息和其它标记的基本单元，以及各种各样的数据。
+在所有的主流的浏览器中，均能够查看原始的XML文件
+什么是XML
+指可扩展标记语言（EXtendsible Markup Language）
+是一种很像HTML的标记语言
+设计宗旨是传输数据，而不是显示数据
+标签没有被预定义，需要自行"
+        "wordCount": 747
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/baimawen" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2019/04/14/Spring的学习（一）/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            Spring的学习（一）
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2019/03/28/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">Hello World</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/04/14/Spring的学习（一）/" class="thumbnail">
+    
+    
+        <span style="background-image:url(css/images/326.JPG)" alt="Spring的学习（一）" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Spring/">Spring</a></p>
+                            <p class="item-title"><a href="/2019/04/14/Spring的学习（一）/" class="title">Spring的学习（一）</a></p>
+                            <p class="item-date"><time datetime="2019-04-13T20:19:23.000Z" itemprop="datePublished">2019-04-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/03/28/XML&Tomcat/" class="thumbnail">
+    
+    
+        <span style="background-image:url(css/images/017.JPG)" alt="XML &amp; Tomcat" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Java/">Java</a></p>
+                            <p class="item-title"><a href="/2019/03/28/XML&Tomcat/" class="title">XML &amp; Tomcat</a></p>
+                            <p class="item-date"><time datetime="2019-03-28T15:27:20.000Z" itemprop="datePublished">2019-03-28</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/03/28/hello-world/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2019/03/28/hello-world/" class="title">Hello World</a></p>
+                            <p class="item-date"><time datetime="2019-03-28T14:52:25.722Z" itemprop="datePublished">2019-03-28</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Spring/">Spring</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/">Spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tomcat/">Tomcat</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XML/">XML</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/XML/" style="font-size: 10px;">XML</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://zhihu.com">Zhihu</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 白马文</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://yoursite.com/2019/03/28/XML&amp;Tomcat/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

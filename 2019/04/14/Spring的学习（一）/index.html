@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
-    <meta charset="utf-8">
+    
 
     
 
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
     
     <title>Spring的学习（一） | Baimawen&#39;s Blog</title>
-    
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Java,Spring">
+    <meta name="theme-color" content="#3F51B5">
     
+    
+    <meta name="keywords" content="Java,Spring">
     <meta name="description" content="Spring概述什么是SpringSpring是一个开源框架，Spring是于2003年兴起的一个轻量级的Java开发框架，由Rod Johnson创建。 简单来说，Spring是一个分层的JavaSE/EE full-stack(一站式)轻量级开原框架  Spring叫做SE/EE开发的一站式框架 一站式框架：有EE开发的每一层解决方案 WEB层：SpringMVC Service层：Sprin">
 <meta name="keywords" content="Java,Spring">
 <meta property="og:type" content="article">
@@ -20,161 +29,173 @@
 <meta property="og:site_name" content="Baimawen&#39;s Blog">
 <meta property="og:description" content="Spring概述什么是SpringSpring是一个开源框架，Spring是于2003年兴起的一个轻量级的Java开发框架，由Rod Johnson创建。 简单来说，Spring是一个分层的JavaSE/EE full-stack(一站式)轻量级开原框架  Spring叫做SE/EE开发的一站式框架 一站式框架：有EE开发的每一层解决方案 WEB层：SpringMVC Service层：Sprin">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/2019/04/14/Spring的学习（一）/css/images/326.JPG">
+<meta property="og:image" content="http://yoursite.com/2019/04/14/Spring的学习（一）/img/SpringFrameworkRuntime.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/14/Spring的学习（一）/img/Spring工厂类的结构图.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/14/Spring的学习（一）/img/SSH整合回顾.png">
 <meta property="og:updated_time" content="2019-04-13T20:26:36.829Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring的学习（一）">
 <meta name="twitter:description" content="Spring概述什么是SpringSpring是一个开源框架，Spring是于2003年兴起的一个轻量级的Java开发框架，由Rod Johnson创建。 简单来说，Spring是一个分层的JavaSE/EE full-stack(一站式)轻量级开原框架  Spring叫做SE/EE开发的一站式框架 一站式框架：有EE开发的每一层解决方案 WEB层：SpringMVC Service层：Sprin">
-<meta name="twitter:image" content="http://yoursite.com/2019/04/14/Spring的学习（一）/css/images/326.JPG">
+<meta name="twitter:image" content="http://yoursite.com/2019/04/14/Spring的学习（一）/img/SpringFrameworkRuntime.png">
     
+        <link rel="alternate" type="application/atom+xml" title="Baimawen&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
 
+    <!-- custom head -->
     
-        <link rel="alternate" href="/" title="Baimawen&#39;s Blog" type="application/atom+xml">
-    
-
-    
-        <link rel="icon" href="/css/images/017.JPG">
-    
-
-    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
-    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
-
-    <link rel="stylesheet" href="/css/style.css">
-
-    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
-    
-    
-        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
-    
-    
-        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
-    
-    
-    
-
 
 </head>
-</html>
+
 <body>
-    <div id="wrap">
-        <header id="header">
-    <div id="header-outer" class="outer">
-        <div class="container">
-            <div class="container-inner">
-                <div id="header-title">
-                    <h1 class="logo-wrap">
-                        <a href="/" class="logo"></a>
-                    </h1>
-                    
-                </div>
-                <div id="header-inner" class="nav-container">
-                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
-                    <div class="nav-container-inner">
-                        <ul id="main-nav">
-                            
-                                <li class="main-nav-list-item">
-                                    <a class="main-nav-list-link" href="/">主页</a>
-                                </li>
-                            
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Spring/">Spring</a></li></ul>
-                                    
-                                <li class="main-nav-list-item">
-                                    <a class="main-nav-list-link" href="/about/">关于</a>
-                                </li>
-                            
-                        </ul>
-                        <nav id="sub-nav">
-                            <div id="search-form-wrap">
+    <div id="loading" class="active"></div>
 
-    <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="搜索">
-        <button type="submit" class="search-form-submit"></button>
-    </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="想要查找什么...">
-            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">白马文</h5>
+          <a href="mailto:915841983@qq.com" title="915841983@qq.com" class="mail">915841983@qq.com</a>
+        </hgroup>
+      </div>
     </div>
-</div>
-<script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: '文章',
-            PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
-            UNTITLED: '(未命名)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
-<script src="/js/insight.js"></script>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                档案
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/yscoder" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.weibo.com/ysweb" target="_blank">
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
 
-</div>
-                        </nav>
-                    </div>
-                </div>
-            </div>
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Spring的学习（一）</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
         </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
     </div>
 </header>
-        <div class="container">
-            <div class="main-body container-inner">
-                <div class="main-body-inner">
-                    <section id="main">
-                        <div class="main-body-header">
-    <h1 class="header">
-    
-    <a class="page-title-link" href="/categories/Spring/">Spring</a>
-    </h1>
-</div>
+<header class="content-header post-header">
 
-                        <div class="main-body-content">
-                            <article id="post-Spring的学习（一）" class="article article-single article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-            <header class="article-header">
-                
-    
-        <h1 class="article-title" itemprop="name">
-        Spring的学习（一）
-        </h1>
-    
+    <div class="container fade-scale">
+        <h1 class="title">Spring的学习（一）</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-04-13T20:19:23.000Z" itemprop="datePublished" class="page-time">
+  2019-04-14
+</time>
 
-            </header>
-        
-        
-            <div class="article-meta">
-                
-    <div class="article-date">
-        <a href="/2019/04/14/Spring的学习（一）/" class="article-date">
-            <time datetime="2019-04-13T20:19:23.000Z" itemprop="datePublished">2019-04-14</time>
-        </a>
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Spring/">Spring</a></li></ul>
+
+            
+        </h5>
     </div>
 
-		
+    
 
-                
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Java/">Java</a>, <a class="tag-link" href="/tags/Spring/">Spring</a>
-    </div>
 
-            </div>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Spring概述"><span class="post-toc-number">1.</span> <span class="post-toc-text">Spring概述</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#什么是Spring"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">什么是Spring</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#SpringIOC-XML"><span class="post-toc-number">2.</span> <span class="post-toc-text">SpringIOC(XML)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#什么是IOC"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">什么是IOC</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#IOC和DI"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">IOC和DI</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Spring的工厂类"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">Spring的工厂类</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Spring的Bean管理"><span class="post-toc-number">3.</span> <span class="post-toc-text">Spring的Bean管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#标签的id和name的配置"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">标签的id和name的配置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Bean生命周期的配置"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">Bean生命周期的配置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Bean的作用范围的配置"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">Bean的作用范围的配置</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Spring属性注入"><span class="post-toc-number">4.</span> <span class="post-toc-text">Spring属性注入</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#构造方法的属性注入"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">构造方法的属性注入</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Set方法的属性注入"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">Set方法的属性注入</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#P-名称空间的属性注入"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">P 名称空间的属性注入</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#SpEL的属性注入"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">SpEL的属性注入</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#集合类型的属性注入"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">集合类型的属性注入</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#SpringIOC注解"><span class="post-toc-number">5.</span> <span class="post-toc-text">SpringIOC注解</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Component：组件"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">Component：组件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#属性注入的注解"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">属性注入的注解</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Spring的AOP开发-XML"><span class="post-toc-number">6.</span> <span class="post-toc-text">Spring的AOP开发(XML)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#什么是AOP"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">什么是AOP</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#AOP相关术语"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">AOP相关术语</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#通知类型"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">通知类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#切入点表达式语法"><span class="post-toc-number">6.4.</span> <span class="post-toc-text">切入点表达式语法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Spring的AOP注解"><span class="post-toc-number">7.</span> <span class="post-toc-text">Spring的AOP注解</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#注解的AOP通知类型"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">注解的AOP通知类型</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Spring的事务管理"><span class="post-toc-number">8.</span> <span class="post-toc-text">Spring的事务管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Spring的事务管理API"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">Spring的事务管理API</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#事务管理的API关系"><span class="post-toc-number">8.1.1.</span> <span class="post-toc-text">事务管理的API关系</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Spring事务的传播行为"><span class="post-toc-number">8.1.2.</span> <span class="post-toc-text">Spring事务的传播行为</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#编程式事务"><span class="post-toc-number">8.2.</span> <span class="post-toc-text">编程式事务</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#声明式事务管理"><span class="post-toc-number">8.3.</span> <span class="post-toc-text">声明式事务管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#XML方式的声明式事务管理"><span class="post-toc-number">8.3.1.</span> <span class="post-toc-text">XML方式的声明式事务管理</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#注解方式的声明式事务管理"><span class="post-toc-number">8.3.2.</span> <span class="post-toc-text">注解方式的声明式事务管理</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JdbcTemplate"><span class="post-toc-number">9.</span> <span class="post-toc-text">JdbcTemplate</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用JDBC的模板：保存数据"><span class="post-toc-number">9.1.</span> <span class="post-toc-text">使用JDBC的模板：保存数据</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#将连接池和模板交给Spring管理"><span class="post-toc-number">9.2.</span> <span class="post-toc-text">将连接池和模板交给Spring管理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用开源的数据库连接池"><span class="post-toc-number">9.3.</span> <span class="post-toc-text">使用开源的数据库连接池</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#DBCP的使用"><span class="post-toc-number">9.3.1.</span> <span class="post-toc-text">DBCP的使用</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#C3P0的使用"><span class="post-toc-number">9.3.2.</span> <span class="post-toc-text">C3P0的使用</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#引入外部属性文件"><span class="post-toc-number">9.4.</span> <span class="post-toc-text">引入外部属性文件</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#SSH整合"><span class="post-toc-number">10.</span> <span class="post-toc-text">SSH整合</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#无障碍整合"><span class="post-toc-number">10.1.</span> <span class="post-toc-text">无障碍整合</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Spring的学习（一）" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Spring的学习（一）</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-04-14 04:19:23" datetime="2019-04-13T20:19:23.000Z" itemprop="datePublished">2019-04-14</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Spring/">Spring</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
             <h2 id="Spring概述"><a href="#Spring概述" class="headerlink" title="Spring概述"></a>Spring概述</h2><h3 id="什么是Spring"><a href="#什么是Spring" class="headerlink" title="什么是Spring"></a>什么是Spring</h3><p>Spring是一个开源框架，Spring是于2003年兴起的一个轻量级的Java开发框架，由Rod Johnson创建。</p>
 <p>简单来说，Spring是一个分层的JavaSE/EE full-stack(一站式)轻量级开原框架</p>
 <ul>
@@ -215,7 +236,13 @@
 <li>Java 源码是经典学习范例</li>
 </ol>
 <p>Spring的源码设计精妙、结构清晰、匠心独运，处处体现着大师对Java设计模式灵活运用以及对Java技术的高深造诣。Spring框架源码无疑是Java技术的最佳实践范例。如果想在短时间内迅速提高自己的Java技术水平和应用开发水平，学习和研究Spring源码将会使你收到意想不到的效果。</p>
-<p><img src="img/SpringFrameworkRuntime.png" alt="img"></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="img/SpringFrameworkRuntime.png" alt="img" title>
+                </div>
+                <div class="image-caption">img</div>
+            </figure>
 <h2 id="SpringIOC-XML"><a href="#SpringIOC-XML" class="headerlink" title="SpringIOC(XML)"></a>SpringIOC(XML)</h2><h3 id="什么是IOC"><a href="#什么是IOC" class="headerlink" title="什么是IOC"></a>什么是IOC</h3><p>控制反转（Inversion of Control，缩写为IoC），是面向对象编程中的一种设计原则，可以用来减低计算机代码之间的耦合度。其中最常见的方式叫做依赖注入（Dependency Injection，简称DI），还有一种方式叫“依赖查找”（Dependency Lookup）。通过控制反转，对象在被创建的时候，由一个调控系统内所有对象的外界实体将其所依赖的对象的引用传递给它。也可以说，依赖被注入到对象中。</p>
 <ul>
 <li>IOC：Inversion of Control(控制反转)<ul>
@@ -230,7 +257,13 @@
 <li>DI：依赖注入：前提必须要有IOC的环境（对象已经交给Spring），Spring在管理类的时候会将类的依赖的属性注入（设置）进来</li>
 </ul>
 <h3 id="Spring的工厂类"><a href="#Spring的工厂类" class="headerlink" title="Spring的工厂类"></a>Spring的工厂类</h3><p><strong>结构图</strong></p>
-<p><img src="img/Spring工厂类的结构图.png" alt="img"></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="img/Spring工厂类的结构图.png" alt="img" title>
+                </div>
+                <div class="image-caption">img</div>
+            </figure>
 <ul>
 <li>BeanFactory：老版本的工厂类<ul>
 <li>调用getBean的时候，才会生成类的实例</li>
@@ -432,7 +465,13 @@
 <h3 id="使用开源的数据库连接池"><a href="#使用开源的数据库连接池" class="headerlink" title="使用开源的数据库连接池"></a>使用开源的数据库连接池</h3><h4 id="DBCP的使用"><a href="#DBCP的使用" class="headerlink" title="DBCP的使用"></a>DBCP的使用</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 配置DBCP连接池 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"dataSource"</span> <span class="attr">class</span>=<span class="string">"org.apache.commons.dbcp.BasicDataSource"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"driverClassName"</span> <span class="attr">value</span>=<span class="string">"com.mysql.jdbc.Driver"</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"url"</span> <span class="attr">value</span>=<span class="string">"jdbc:mysql:///spring4_day03"</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">value</span>=<span class="string">"root"</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">value</span>=<span class="string">"abc"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h4 id="C3P0的使用"><a href="#C3P0的使用" class="headerlink" title="C3P0的使用"></a>C3P0的使用</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 配置C3P0连接池 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"dataSource"</span> <span class="attr">class</span>=<span class="string">"org.mchange.v2.c3p0.ComboPooledDataSource"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"driverClass"</span> <span class="attr">value</span>=<span class="string">"com.mysql.jdbc.Driver"</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"jdbcUrl"</span> <span class="attr">value</span>=<span class="string">"jdbc:mysql:///spring4_day03"</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"user"</span> <span class="attr">value</span>=<span class="string">"root"</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">value</span>=<span class="string">"abc"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h3 id="引入外部属性文件"><a href="#引入外部属性文件" class="headerlink" title="引入外部属性文件"></a>引入外部属性文件</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"># jdbc.properties</span><br><span class="line">jdbc.driverClass=com.mysql.jdbc.Driver</span><br><span class="line">jdbc.url=jdbc:mysql:///spring4_day03</span><br><span class="line">jdbc.username=root</span><br><span class="line">jdbc.password=abc</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 引入属性文件 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 第一种方式通过一个bean标签引入（很少使用） --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">"org.springframework.beans.factory.config.PropertyPlanceholderConfigurer"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"location"</span> <span class="attr">value</span>=<span class="string">"classpath:jdbc.properties"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 第二种方式通过context的标签引入 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context:property-placeholder</span> <span class="attr">localtion</span>=<span class="string">"classpath:jdbc.properties"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 配置连接池的时候 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"driverClass"</span> <span class="attr">value</span>=<span class="string">"$&#123;jdbc.driverClass&#125;"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"jdbcUrl"</span> <span class="attr">value</span>=<span class="string">"$&#123;jdbc.url&#125;"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="SSH整合"><a href="#SSH整合" class="headerlink" title="SSH整合"></a>SSH整合</h2><p><img src="img/SSH整合回顾.png" alt="img"></p>
+<h2 id="SSH整合"><a href="#SSH整合" class="headerlink" title="SSH整合"></a>SSH整合</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="img/SSH整合回顾.png" alt="img" title>
+                </div>
+                <div class="image-caption">img</div>
+            </figure>
 <h3 id="无障碍整合"><a href="#无障碍整合" class="headerlink" title="无障碍整合"></a>无障碍整合</h3><ul>
 <li><p>创建Web项目，引入jar包</p>
 <ul>
@@ -550,363 +589,297 @@
 <p>  <context-param><br>      <param-name>contextConfigLocation</param-name><br>      <param-value>classpath:applicationContext.xml</param-value><br>  </context-param><br>      <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">  	- applicationContext.xml</span><br><span class="line">  	- 日志记录</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### 将Hibernate的配置交给Spring管理</span><br><span class="line"></span><br><span class="line">```xml</span><br><span class="line"></span><br><span class="line">&lt;!-- 引入外部属性文件=============================== --&gt;</span><br><span class="line">	&lt;context:property-placeholder location=&quot;classpath:jdbc.properties&quot;/&gt;</span><br><span class="line"></span><br><span class="line">	&lt;!-- 配置C3P0连接池=============================== --&gt;</span><br><span class="line">	&lt;bean id=&quot;dataSource&quot; class=&quot;com.mchange.v2.c3p0.ComboPooledDataSource&quot;&gt;</span><br><span class="line">		&lt;property name=&quot;driverClass&quot; value=&quot;$&#123;jdbc.driverClass&#125;&quot;/&gt;</span><br><span class="line">		&lt;property name=&quot;jdbcUrl&quot; value=&quot;$&#123;jdbc.url&#125;&quot;/&gt;</span><br><span class="line">		&lt;property name=&quot;user&quot; value=&quot;$&#123;jdbc.username&#125;&quot;/&gt;</span><br><span class="line">		&lt;property name=&quot;password&quot; value=&quot;$&#123;jdbc.password&#125;&quot;/&gt;</span><br><span class="line">	&lt;/bean&gt;</span><br><span class="line"></span><br><span class="line">	&lt;!-- Spring整合Hibernate --&gt;</span><br><span class="line">	&lt;!-- 引入Hibernate的配置的信息=============== --&gt;</span><br><span class="line">	&lt;bean id=&quot;sessionFactory&quot; class=&quot;org.springframework.orm.hibernate5.LocalSessionFactoryBean&quot;&gt;</span><br><span class="line">		&lt;!-- 注入连接池 --&gt;</span><br><span class="line">		&lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot;/&gt;</span><br><span class="line">		&lt;!-- 配置Hibernate的相关属性 --&gt;</span><br><span class="line">		&lt;property name=&quot;hibernateProperties&quot;&gt;</span><br><span class="line">			&lt;props&gt;</span><br><span class="line">				&lt;prop key=&quot;hibernate.dialect&quot;&gt;org.hibernate.dialect.MySQLDialect&lt;/prop&gt;</span><br><span class="line">				&lt;prop key=&quot;hibernate.show_sql&quot;&gt;true&lt;/prop&gt;</span><br><span class="line">				&lt;prop key=&quot;hibernate.format_sql&quot;&gt;true&lt;/prop&gt;</span><br><span class="line">				&lt;prop key=&quot;hibernate.hbm2ddl.auto&quot;&gt;update&lt;/prop&gt;</span><br><span class="line">			&lt;/props&gt;</span><br><span class="line">		&lt;/property&gt;</span><br><span class="line"></span><br><span class="line">		&lt;!-- 设置映射文件 --&gt;</span><br><span class="line">		&lt;property name=&quot;mappingResources&quot;&gt;</span><br><span class="line">			&lt;list&gt;</span><br><span class="line">				&lt;value&gt;com/itheima/ssh/domain/Customer.hbm.xml&lt;/value&gt;</span><br><span class="line">			&lt;/list&gt;</span><br><span class="line">		&lt;/property&gt;</span><br><span class="line">	&lt;/bean&gt;</span><br></pre></td></tr></table></figure></p>
 
         </div>
-        <footer class="article-footer">
-            
 
-    <div class="bdsharebuttonbox">
-    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
-    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
-    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
-    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
-    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
-    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
-</div>
-<script>
-window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-</script>
-<style>
-    .bdshare_popup_box {
-        border-radius: 4px;
-        border: #e1e1e1 solid 1px;
-    }
-    .bdshare-button-style0-16 a,
-    .bdshare-button-style0-16 .bds_more {
-        padding-left: 20px;
-        margin: 6px 10px 6px 0;
-    }
-    .bdshare_dialog_list a,
-    .bdshare_popup_list a,
-    .bdshare_popup_bottom a {
-        font-family: 'Microsoft Yahei';
-    }
-    .bdshare_popup_top {
-        display: none;
-    }
-    .bdshare_popup_bottom {
-        height: auto;
-        padding: 5px;
-    }
-</style>
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-04-13T20:26:36.829Z" itemprop="dateUpdated">2019-04-14 04:26:36</time>
+</span><br>
 
 
-
-        </footer>
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/04/14/Spring的学习（一）/" target="_blank" rel="external">http://yoursite.com/2019/04/14/Spring的学习（一）/</a>
+        
     </div>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "author": {
-            "@type": "Person",
-            "name": "白马文"
-        },
-        "headline": "Spring的学习（一）",
-        "image": "http://yoursite.comcss/images/326.JPG",
-        "keywords": "Java Spring",
-        "genre": "Spring",
-        "datePublished": "2019-04-14",
-        "dateCreated": "2019-04-14",
-        "dateModified": "2019-04-14",
-        "url": "http://yoursite.com/2019/04/14/Spring的学习（一）/",
-        "description": "Spring概述什么是SpringSpring是一个开源框架，Spring是于2003年兴起的一个轻量级的Java开发框架，由Rod Johnson创建。
-简单来说，Spring是一个分层的JavaSE/EE full-stack(一站式)轻量级开原框架
+    
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="白马文">
+            白马文
+        </a>
+    </footer>
+</blockquote>
 
-Spring叫做SE/EE开发的一站式框架
-一站式框架：有EE开发的每一层解决方案
-WEB层：SpringMVC
-Service层：Sprin"
-        "wordCount": 3212
-    }
-</script>
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring/">Spring</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/04/14/Spring的学习（一）/&title=《Spring的学习（一）》 — Baimawen's Blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/04/14/Spring的学习（一）/&title=《Spring的学习（一）》 — Baimawen's Blog&source=Blog about Recording Your Learning" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/04/14/Spring的学习（一）/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Spring的学习（一）》 — Baimawen's Blog&url=http://yoursite.com/2019/04/14/Spring的学习（一）/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/04/14/Spring的学习（一）/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/03/28/XML&Tomcat/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">XML &amp; Tomcat</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </article>
 
-    <section id="comments">
-    
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
         
-    <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
-
-    
-    </section>
-
-
-
-                        </div>
-                    </section>
-                    <aside id="sidebar">
-    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
-    <div class="sidebar-top">
-        <p>关注我 :</p>
-        <ul class="social-links">
-            
-                
-                <li>
-                    <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener">
-                        <i class="icon fa fa-twitter"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="facebook" href="/" target="_blank" rel="noopener">
-                        <i class="icon fa fa-facebook"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="google-plus" href="/" target="_blank" rel="noopener">
-                        <i class="icon fa fa-google-plus"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="github" href="https://github.com/baimawen" target="_blank" rel="noopener">
-                        <i class="icon fa fa-github"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="weibo" href="/" target="_blank" rel="noopener">
-                        <i class="icon fa fa-weibo"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener">
-                        <i class="icon fa fa-rss"></i>
-                    </a>
-                </li>
-                
-            
-        </ul>
-    </div>
-    
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
         
-<nav id="article-nav">
-    
-    
-        <a href="/2019/03/28/XML&Tomcat/" id="article-nav-older" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">XML &amp; Tomcat</p>
-        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
-        </a>
-    
-</nav>
-
-    
-    <div class="widgets-container">
-        
-            
-                
-
-            
-                
-    <div class="widget-wrap">
-        <h3 class="widget-title">最新文章</h3>
-        <div class="widget">
-            <ul id="recent-post" class>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2019/04/14/Spring的学习（一）/" class="thumbnail">
-    
-    
-        <span style="background-image:url(css/images/326.JPG)" alt="Spring的学习（一）" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Spring/">Spring</a></p>
-                            <p class="item-title"><a href="/2019/04/14/Spring的学习（一）/" class="title">Spring的学习（一）</a></p>
-                            <p class="item-date"><time datetime="2019-04-13T20:19:23.000Z" itemprop="datePublished">2019-04-14</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2019/03/28/XML&Tomcat/" class="thumbnail">
-    
-    
-        <span style="background-image:url(css/images/017.JPG)" alt="XML &amp; Tomcat" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Java/">Java</a></p>
-                            <p class="item-title"><a href="/2019/03/28/XML&Tomcat/" class="title">XML &amp; Tomcat</a></p>
-                            <p class="item-date"><time datetime="2019-03-28T15:27:20.000Z" itemprop="datePublished">2019-03-28</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2019/03/28/hello-world/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2019/03/28/hello-world/" class="title">Hello World</a></p>
-                            <p class="item-date"><time datetime="2019-03-28T14:52:25.722Z" itemprop="datePublished">2019-03-28</time></p>
-                        </div>
-                    </li>
-                
-            </ul>
-        </div>
-    </div>
-
-            
-                
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">分类</h3>
-        <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Spring/">Spring</a><span class="category-list-count">1</span></li></ul>
-        </div>
-    </div>
-
-
-            
-                
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">归档</h3>
-        <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">2</span></li></ul>
-        </div>
-    </div>
-
-
-            
-                
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">标签</h3>
-        <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/">Spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tomcat/">Tomcat</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XML/">XML</a><span class="tag-list-count">1</span></li></ul>
-        </div>
-    </div>
-
-
-            
-                
-    <div class="widget-wrap widget-float">
-        <h3 class="widget-title">标签云</h3>
-        <div class="widget tagcloud">
-            <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/XML/" style="font-size: 10px;">XML</a>
-        </div>
-    </div>
-
-
-            
-                
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">链接</h3>
-        <div class="widget">
-            <ul>
-                
-                    <li>
-                        <a href="http://zhihu.com">Zhihu</a>
-                    </li>
-                
-            </ul>
-        </div>
-    </div>
-
-
-            
-        
-    </div>
-</aside>
-
-                </div>
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
             </div>
-        </div>
-        <footer id="footer">
-    <div class="container">
-        <div class="container-inner">
-            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
-            <div class="credit">
-                <h1 class="logo-wrap">
-                    <a href="/" class="logo"></a>
-                </h1>
-                <p>&copy; 2019 白马文</p>
-                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
-            </div>
-            <div class="footer-plugins">
-              
-    
+        </label>
+        
+    </div>
+</div>
 
 
-            </div>
-        </div>
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>白马文 &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
     </div>
 </footer>
 
-        
-    
-    <script>
-    var disqus_shortname = 'hexo-theme-hueman';
-    
-    
-    var disqus_url = 'http://yoursite.com/2019/04/14/Spring的学习（一）/';
-    
-    (function() {
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-    </script>
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/04/14/Spring的学习（一）/&title=《Spring的学习（一）》 — Baimawen's Blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/04/14/Spring的学习（一）/&title=《Spring的学习（一）》 — Baimawen's Blog&source=Blog about Recording Your Learning" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/04/14/Spring的学习（一）/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Spring的学习（一）》 — Baimawen's Blog&url=http://yoursite.com/2019/04/14/Spring的学习（一）/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/04/14/Spring的学习（一）/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKElEQVR42u3aQY6DMAwF0N7/0sx2pA7020lHwrysqkJLHgvLjv16xes4Wb+vnt3/fs/71evvty0MDIzbMo7Ltes9Jf+cX/1jJxgYGA9gnD04CanXgTUJuMnnD3vGwMDAKCZ/KykmBgYGxjqjuonrtPLsBWFgYGD0ithku9WNJq9vcy2OgYFxQ0Z+WPb/n7/S38DAwLgV4yiuagOylz6Wd4WBgTGaseuYbCXt6wVcDAwMjN4QRrUM7rUfouwVAwNjEOM6gFb/NEkZk6tVJAYGxmzGrlbltvSu2MLEwMB4AiNvCuaPTMrdauL44eViYGCMZlQ3tH4Al49xVEc0MDAwnsnolZrrG6oGXwwMjNmMlWCaB+j10PwhucTAwBjNyLuBvaJ0vTmaB3EMDIypjPxgq1qU9orVZvmKgYExmrGr9Zj3S6uDFBuGLTAwMG7OyJuX1SZlnm7m95enNjAwMAYx8vC34ZHLvz2dGcHAwBjK6A1+XfN6KWO1hRm1BDAwMAYx8rDbC5d5A3JlLAMDA+M5jOp5e97azO/JwRgYGE9m5Af6+bHd14teDAyMoYyjuKqFaJ5c9hoJf7QwMTAwxjF6wS4pU68Py77dkcTAwJjHSILsN47k1gPuK6mYMTAwBjF6rcTkwUmbszpsgYGBgdEbelg5RFv/HgMDA2M9HSzPqRWTVwwMjCcwkiL2eivJb/OCttxUwMDAGM2oJnDrgxf5a1qhYmBgjGD8AHFIapi5+v8oAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
 
 
 
 
-    
-        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
-    
-    
-        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
-    
-    
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
 
 
 
-<!-- Custom Scripts -->
-<script src="/js/main.js"></script>
 
-    </div>
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
 </body>
 </html>

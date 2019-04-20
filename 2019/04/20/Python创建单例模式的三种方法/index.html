@@ -16,7 +16,7 @@
 <meta property="og:description" content="简单的列举了单例的创建方式">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
-<meta property="og:updated_time" content="2019-04-20T16:02:47.336Z">
+<meta property="og:updated_time" content="2019-04-20T16:14:33.634Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python创建单例模式的三种方法">
 <meta name="twitter:description" content="简单的列举了单例的创建方式">
@@ -34,7 +34,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/googlecode.css">
 
 
     
@@ -155,7 +155,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 308 个字)
+                    2 分钟 读完 (大约 311 个字)
                 </span>
                 
                 
@@ -169,23 +169,12 @@
         </h1>
         <div class="content">
             <p>简单的列举了单例的创建方式<br><a id="more"></a></p>
-<p>方法一：使用装饰器<br>装饰器维护一个字典对象instances，缓存了所有的单例类，只要单例类不存在则创建，已经创建直接返回该实例对象。<br>def singleton(cls):<br>    instances = {}</p>
-<pre><code>def wrapper(*args, **kwargs):
-    if cls not in instances:
-        instances[cls] = cls(*args, **kwargs)
-    return instances[cls]
-return wrapper
-</code></pre><p>@singleton<br>class Foo(object):<br>    pass</p>
-<p>foo1 = Foo()<br>foo2 = Foo()</p>
-<p>print(id(foo1), id(foo2))</p>
-<p>方法二：使用基类<br><strong>new</strong>是真正创建实例对象的方法，所以重写基类的<strong>new</strong>方法，以此来保证创建对象的时候只生成一个实例。<br>class Singleton(object):<br>    def <strong>new</strong>(cls, <em>args, **kwargs):<br>        if not hasattr(cls, ‘_instance’):<br>            cls._instance = super(Singleton, cls).<strong>new</strong>(cls, </em>args, **kwargs)<br>        return cls._instance</p>
-<p>class Foo(Singleton):<br>    pass</p>
-<p>foo1 = Foo()<br>foo2 = Foo()</p>
-<p>print(foo1 is foo2)</p>
-<p>方法三：使用元类<br>元类是用于创建类对象的类， 类对象创建实例对象时一定会调用<strong>call</strong>方法，因此在调用<strong>call</strong>时候保证始终只创建一个实例即可，type是Python中的一个元类。<br>class Singleton(type):<br>    def <strong>call</strong>(cls, <em>args, **kwargs):<br>        if not hasattr(cls, ‘_instance’):<br>            cls._instance = super(Singleton, cls).<strong>call</strong>(</em>args, **kwargs)<br>        return cls._instance</p>
-<p>class Foo(object):<br>    <strong>metaclass</strong> = Singleton</p>
-<p>foo1 = Foo()<br>foo2 = Foo()</p>
-<p>print(foo1 is foo2)</p>
+<h2 id="方法一：使用装饰器"><a href="#方法一：使用装饰器" class="headerlink" title="方法一：使用装饰器"></a>方法一：使用装饰器</h2><p>装饰器维护一个字典对象instances，缓存了所有的单例类，只要单例类不存在则创建，已经创建直接返回该实例对象。</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">singleton</span><span class="hljs-params">(cls)</span>:</span></span><br><span class="line">	instances = &#123;&#125;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">wrapper</span><span class="hljs-params">(*args, **kwargs)</span>:</span></span><br><span class="line">		<span class="hljs-keyword">if</span> cls <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> instances:</span><br><span class="line">			instances[cls] = cls(*args, **kwargs)</span><br><span class="line">		<span class="hljs-keyword">return</span> instances[cls]</span><br><span class="line">	<span class="hljs-keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">@singleton</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span><span class="hljs-params">(object)</span>:</span></span><br><span class="line">	<span class="hljs-keyword">pass</span></span><br><span class="line"></span><br><span class="line">foo1 = Foo()</span><br><span class="line">foo2 = Foo()</span><br><span class="line"></span><br><span class="line">print(id(foo1), id(foo2))</span><br></pre></td></tr></table></figure>
+<h2 id="方法二：使用基类"><a href="#方法二：使用基类" class="headerlink" title="方法二：使用基类"></a>方法二：使用基类</h2><p><strong>new</strong>是真正创建实例对象的方法，所以重写基类的<strong>new</strong>方法，以此来保证创建对象的时候只生成一个实例。</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Singleton</span><span class="hljs-params">(object)</span>:</span></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__new__</span><span class="hljs-params">(cls, *args, **kwargs)</span>:</span></span><br><span class="line">		<span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> hasattr(cls, <span class="hljs-string">'_instance'</span>):</span><br><span class="line">			cls._instance = super(Singleton, cls).__new__(cls, *args, **kwargs)</span><br><span class="line">		<span class="hljs-keyword">return</span> cls._instance</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span><span class="hljs-params">(Singleton)</span>:</span></span><br><span class="line">	<span class="hljs-keyword">pass</span></span><br><span class="line"></span><br><span class="line">foo1 = Foo()</span><br><span class="line">foo2 = Foo()</span><br><span class="line"></span><br><span class="line">print(foo1 <span class="hljs-keyword">is</span> foo2)</span><br></pre></td></tr></table></figure>
+<h2 id="方法三：使用元类"><a href="#方法三：使用元类" class="headerlink" title="方法三：使用元类"></a>方法三：使用元类</h2><p>元类是用于创建类对象的类， 类对象创建实例对象时一定会调用<strong>call</strong>方法，因此在调用<strong>call</strong>时候保证始终只创建一个实例即可，type是Python中的一个元类。</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Singleton</span><span class="hljs-params">(type)</span>:</span></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__call__</span><span class="hljs-params">(cls, *args, **kwargs)</span>:</span></span><br><span class="line">		<span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> hasattr(cls, <span class="hljs-string">'_instance'</span>):</span><br><span class="line">			cls._instance = super(Singleton, cls).__call__(*args, **kwargs)</span><br><span class="line">		<span class="hljs-keyword">return</span> cls._instance</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span><span class="hljs-params">(object)</span>:</span></span><br><span class="line">	__metaclass__ = Singleton</span><br><span class="line"></span><br><span class="line">foo1 = Foo()</span><br><span class="line">foo2 = Foo()</span><br><span class="line"></span><br><span class="line">print(foo1 <span class="hljs-keyword">is</span> foo2)</span><br></pre></td></tr></table></figure>
 
         </div>
         

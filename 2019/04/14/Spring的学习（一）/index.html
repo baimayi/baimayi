@@ -16,7 +16,7 @@
 <meta property="og:description" content="Spring的一些关键字概念及配置">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
-<meta property="og:updated_time" content="2019-04-20T15:59:26.495Z">
+<meta property="og:updated_time" content="2019-04-20T16:22:22.979Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring的学习（一）">
 <meta name="twitter:description" content="Spring的一些关键字概念及配置">
@@ -125,6 +125,10 @@
                     </a>
                     
                 
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
                 
                 
                 <a class="navbar-item search" title="搜索" href="javascript:;">
@@ -675,6 +679,189 @@
 </div>
     
         
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                目录
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#Spring概述">
+        <span class="has-mr-6">1</span>
+        <span>Spring概述</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#什么是Spring">
+        <span class="has-mr-6">1.1</span>
+        <span>什么是Spring</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#SpringIOC-XML">
+        <span class="has-mr-6">2</span>
+        <span>SpringIOC(XML)</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#什么是IOC">
+        <span class="has-mr-6">2.1</span>
+        <span>什么是IOC</span>
+        </a></li><li>
+        <a class="is-flex" href="#IOC和DI">
+        <span class="has-mr-6">2.2</span>
+        <span>IOC和DI</span>
+        </a></li><li>
+        <a class="is-flex" href="#Spring的工厂类">
+        <span class="has-mr-6">2.3</span>
+        <span>Spring的工厂类</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#Spring的Bean管理">
+        <span class="has-mr-6">3</span>
+        <span>Spring的Bean管理</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#标签的id和name的配置">
+        <span class="has-mr-6">3.1</span>
+        <span>标签的id和name的配置</span>
+        </a></li><li>
+        <a class="is-flex" href="#Bean生命周期的配置">
+        <span class="has-mr-6">3.2</span>
+        <span>Bean生命周期的配置</span>
+        </a></li><li>
+        <a class="is-flex" href="#Bean的作用范围的配置">
+        <span class="has-mr-6">3.3</span>
+        <span>Bean的作用范围的配置</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#Spring属性注入">
+        <span class="has-mr-6">4</span>
+        <span>Spring属性注入</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#构造方法的属性注入">
+        <span class="has-mr-6">4.1</span>
+        <span>构造方法的属性注入</span>
+        </a></li><li>
+        <a class="is-flex" href="#Set方法的属性注入">
+        <span class="has-mr-6">4.2</span>
+        <span>Set方法的属性注入</span>
+        </a></li><li>
+        <a class="is-flex" href="#P-名称空间的属性注入">
+        <span class="has-mr-6">4.3</span>
+        <span>P 名称空间的属性注入</span>
+        </a></li><li>
+        <a class="is-flex" href="#SpEL的属性注入">
+        <span class="has-mr-6">4.4</span>
+        <span>SpEL的属性注入</span>
+        </a></li><li>
+        <a class="is-flex" href="#集合类型的属性注入">
+        <span class="has-mr-6">4.5</span>
+        <span>集合类型的属性注入</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#SpringIOC注解">
+        <span class="has-mr-6">5</span>
+        <span>SpringIOC注解</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#Component：组件">
+        <span class="has-mr-6">5.1</span>
+        <span>Component：组件</span>
+        </a></li><li>
+        <a class="is-flex" href="#属性注入的注解">
+        <span class="has-mr-6">5.2</span>
+        <span>属性注入的注解</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#Spring的AOP开发-XML">
+        <span class="has-mr-6">6</span>
+        <span>Spring的AOP开发(XML)</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#什么是AOP">
+        <span class="has-mr-6">6.1</span>
+        <span>什么是AOP</span>
+        </a></li><li>
+        <a class="is-flex" href="#AOP相关术语">
+        <span class="has-mr-6">6.2</span>
+        <span>AOP相关术语</span>
+        </a></li><li>
+        <a class="is-flex" href="#通知类型">
+        <span class="has-mr-6">6.3</span>
+        <span>通知类型</span>
+        </a></li><li>
+        <a class="is-flex" href="#切入点表达式语法">
+        <span class="has-mr-6">6.4</span>
+        <span>切入点表达式语法</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#Spring的AOP注解">
+        <span class="has-mr-6">7</span>
+        <span>Spring的AOP注解</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#注解的AOP通知类型">
+        <span class="has-mr-6">7.1</span>
+        <span>注解的AOP通知类型</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#Spring的事务管理">
+        <span class="has-mr-6">8</span>
+        <span>Spring的事务管理</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#Spring的事务管理API">
+        <span class="has-mr-6">8.1</span>
+        <span>Spring的事务管理API</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#事务管理的API关系">
+        <span class="has-mr-6">8.1.1</span>
+        <span>事务管理的API关系</span>
+        </a></li><li>
+        <a class="is-flex" href="#Spring事务的传播行为">
+        <span class="has-mr-6">8.1.2</span>
+        <span>Spring事务的传播行为</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#编程式事务">
+        <span class="has-mr-6">8.2</span>
+        <span>编程式事务</span>
+        </a></li><li>
+        <a class="is-flex" href="#声明式事务管理">
+        <span class="has-mr-6">8.3</span>
+        <span>声明式事务管理</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#XML方式的声明式事务管理">
+        <span class="has-mr-6">8.3.1</span>
+        <span>XML方式的声明式事务管理</span>
+        </a></li><li>
+        <a class="is-flex" href="#注解方式的声明式事务管理">
+        <span class="has-mr-6">8.3.2</span>
+        <span>注解方式的声明式事务管理</span>
+        </a></li></ul></li></ul></li><li>
+        <a class="is-flex" href="#JdbcTemplate">
+        <span class="has-mr-6">9</span>
+        <span>JdbcTemplate</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#使用JDBC的模板：保存数据">
+        <span class="has-mr-6">9.1</span>
+        <span>使用JDBC的模板：保存数据</span>
+        </a></li><li>
+        <a class="is-flex" href="#将连接池和模板交给Spring管理">
+        <span class="has-mr-6">9.2</span>
+        <span>将连接池和模板交给Spring管理</span>
+        </a></li><li>
+        <a class="is-flex" href="#使用开源的数据库连接池">
+        <span class="has-mr-6">9.3</span>
+        <span>使用开源的数据库连接池</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#DBCP的使用">
+        <span class="has-mr-6">9.3.1</span>
+        <span>DBCP的使用</span>
+        </a></li><li>
+        <a class="is-flex" href="#C3P0的使用">
+        <span class="has-mr-6">9.3.2</span>
+        <span>C3P0的使用</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#引入外部属性文件">
+        <span class="has-mr-6">9.4</span>
+        <span>引入外部属性文件</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#SSH整合">
+        <span class="has-mr-6">10</span>
+        <span>SSH整合</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#无障碍整合">
+        <span class="has-mr-6">10.1</span>
+        <span>无障碍整合</span>
+        </a></li></ul></li></ul>
+        </div>
+    </div>
+</div>
+
     
         
 

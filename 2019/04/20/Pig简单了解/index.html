@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Pig简单了解 | Baimawen&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Pig">
+    <meta name="description" content="定义Apache Pig是MapReduce的一个抽象，是一个工具/平台，用于分析较大的数据集，并将它们表示为数据流。 可以使用Pig在Hadoop中执行所有的数据处理的操作 下载地址：[ http://mirrors.shu.edu.cn/apache/pig/pig-0.17.0/ ]  先决条件：在运行在Apache Pig之前，必须在系统上安装h好Hadooph和Java  安装12345">
+<meta name="keywords" content="Pig">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pig简单了解">
+<meta property="og:url" content="http://yoursite.com/2019/04/20/Pig简单了解/index.html">
+<meta property="og:site_name" content="Baimawen&#39;s Blog">
+<meta property="og:description" content="定义Apache Pig是MapReduce的一个抽象，是一个工具/平台，用于分析较大的数据集，并将它们表示为数据流。 可以使用Pig在Hadoop中执行所有的数据处理的操作 下载地址：[ http://mirrors.shu.edu.cn/apache/pig/pig-0.17.0/ ]  先决条件：在运行在Apache Pig之前，必须在系统上安装h好Hadooph和Java  安装12345">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-04-20T12:42:32.790Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Pig简单了解">
+<meta name="twitter:description" content="定义Apache Pig是MapReduce的一个抽象，是一个工具/平台，用于分析较大的数据集，并将它们表示为数据流。 可以使用Pig在Hadoop中执行所有的数据处理的操作 下载地址：[ http://mirrors.shu.edu.cn/apache/pig/pig-0.17.0/ ]  先决条件：在运行在Apache Pig之前，必须在系统上安装h好Hadooph和Java  安装12345">
+    
+        <link rel="alternate" type="application/atom+xml" title="Baimawen&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">白马文</h5>
+          <a href="mailto:915841983@qq.com" title="915841983@qq.com" class="mail">915841983@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                档案
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/yscoder" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.weibo.com/ysweb" target="_blank">
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Pig简单了解</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Pig简单了解</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-04-20T12:41:43.000Z" itemprop="datePublished" class="page-time">
+  2019-04-20
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Bigdata/">Bigdata</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#定义"><span class="post-toc-number">1.</span> <span class="post-toc-text">定义</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Pig的执行模式和机制"><span class="post-toc-number">3.</span> <span class="post-toc-text">Pig的执行模式和机制</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#模式"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">模式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#执行机制"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">执行机制</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Pig-Grunt-Shell"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">Pig Grunt Shell</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Pig-Latin"><span class="post-toc-number">4.</span> <span class="post-toc-text">Pig Latin</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数据模型"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">数据模型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#类型结构运算符"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">类型结构运算符</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#关系运算符"><span class="post-toc-number">4.2.1.</span> <span class="post-toc-text">关系运算符</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#LOAD-运算符"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">LOAD 运算符</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#STORE-存储数据"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">STORE 存储数据</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Group运算符"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">Group运算符</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Foreach运算符"><span class="post-toc-number">4.6.</span> <span class="post-toc-text">Foreach运算符</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Pig简单了解" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Pig简单了解</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-04-20 20:41:43" datetime="2019-04-20T12:41:43.000Z" itemprop="datePublished">2019-04-20</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Bigdata/">Bigdata</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>Apache Pig是MapReduce的一个抽象，是一个工具/平台，用于分析较大的数据集，并将它们表示为数据流。</p>
+<p>可以使用Pig在Hadoop中执行所有的数据处理的操作</p>
+<p>下载地址：[ <a href="http://mirrors.shu.edu.cn/apache/pig/pig-0.17.0/" target="_blank" rel="noopener">http://mirrors.shu.edu.cn/apache/pig/pig-0.17.0/</a> ]</p>
+<ul>
+<li>先决条件：在运行在Apache Pig之前，必须在系统上安装h好Hadooph和Java</li>
+</ul>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#</span> 创建pig存放目录</span><br><span class="line">mkdir /opt/pig</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 解压pig</span><br><span class="line">tar xvf tar xvf pig-0.17.0.tar.gz</span><br><span class="line">mv pig-0.17.0/*  /opt/pig</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 添加环境变量</span><br><span class="line">export PIG_HOME=/opt/pig</span><br><span class="line">export PIG_CLASSPATH=$PIG_HOME/conf</span><br><span class="line">export PATH=$PIG_HOME/bin:$PATH</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 查看是否配置成功</span><br><span class="line">pig -version</span><br></pre></td></tr></table></figure>
+<h2 id="Pig的执行模式和机制"><a href="#Pig的执行模式和机制" class="headerlink" title="Pig的执行模式和机制"></a>Pig的执行模式和机制</h2><h3 id="模式"><a href="#模式" class="headerlink" title="模式"></a>模式</h3><ul>
+<li>Local模式(pig -x local)<ul>
+<li>在此模式下，所有文件都从本地主机和本地文件系统加载，通常用于测试。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>MapReduce模式(pig -x mapreduce)<ul>
+<li>使用Pig加载或处理Hadoop文件系统中存在的数据的地方。在这种模式下， 每当执行Pig语句来处理数据时，会在后端调用一个MapReduce作业。</li>
+</ul>
+</li>
+</ul>
+<h3 id="执行机制"><a href="#执行机制" class="headerlink" title="执行机制"></a>执行机制</h3><p><strong>通过三种方式执行，即交互模式</strong></p>
+<ul>
+<li><p>交互模式（Grunt shell）</p>
+<ul>
+<li>在此shell中，可以输入Pig Latin语句并获取输出（使用Dump运算符）</li>
+</ul>
+</li>
+<li><p>批处理模式（脚本）</p>
+<ul>
+<li>可以将Pig Latin脚本写入具有.pig扩展名的单个文件中，以批处理模式运行</li>
+</ul>
+</li>
+<li><p>嵌入式模式（UDF）</p>
+<ul>
+<li>Pig允许在Java等编程语言中定义自己的函数，并在脚本中运行</li>
+</ul>
+</li>
+</ul>
+<h3 id="Pig-Grunt-Shell"><a href="#Pig-Grunt-Shell" class="headerlink" title="Pig Grunt Shell"></a>Pig Grunt Shell</h3><p>示例：<code>sh ls</code><br>调用Linux shell 的ls命令</p>
+<p>示例： <code>fs -ls</code><br>调用HDFS的ls命令</p>
+<p>示例： <code>exec /sample_script.pig</code><br>从Grunt shell执行Pig脚本</p>
+<p>示例： <code>run /sample_script.pig</code><br>从Grunt shell运行Pig脚本</p>
+<p><strong>exec和run命令之间的区别是，如果使用run，则脚本中的语句在historym命令中可用</strong></p>
+<h2 id="Pig-Latin"><a href="#Pig-Latin" class="headerlink" title="Pig Latin"></a>Pig Latin</h2><p>Pig Latin适用于使用Pig分析Hadoop中数据的语言</p>
+<h3 id="数据模型"><a href="#数据模型" class="headerlink" title="数据模型"></a>数据模型</h3><p>Pig的数据模型是完全嵌套的。</p>
+<ul>
+<li>包是元组的集合</li>
+<li>元组是有序的字段集</li>
+<li>字段是一段数据</li>
+</ul>
+<h3 id="类型结构运算符"><a href="#类型结构运算符" class="headerlink" title="类型结构运算符"></a>类型结构运算符</h3><p>()    -&gt;    元组构造函数运算符，用于构建元组</p>
+<p>{}    -&gt;    包构造函数运算符，用于构造包    -&gt;    示例:{（Raju,30）,（Mohammad,45）}</p>
+<p>[]    -&gt;    映射构造函数运算符，用于构造一个映射    -&gt;    示例：[name＃Raja,age＃30]</p>
+<h4 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h4><table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>加载和存储</td>
+</tr>
+<tr>
+<td>LOAD</td>
+<td>将数据从文件系统(local/HDFS)加载到关系中</td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td>STORE</td>
+<td>将数据从文件系统(local/HDFS)存储到关系中</td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td>过滤</td>
+</tr>
+<tr>
+<td>FILTER</td>
+<td>从关系中删除不需要的行</td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td>DISTINCT</td>
+<td>从关系中删除重复行</td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td>FOREACH, GENERATE</td>
+<td>基于数据列生成数据转换</td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td>STREAM</td>
+<td>使用外部程序转换关系</td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td>分组和连接</td>
+</tr>
+<tr>
+<td>JOIN</td>
+<td>连接两个或多个关系</td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td>COGROUP</td>
+<td>将数据分组为两个或多个关系</td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td>GROUP</td>
+<td>在单个关系中对数据进行分组</td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td>CROSS</td>
+<td>创建两个或多个关系的向量积</td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td>排序</td>
+</tr>
+<tr>
+<td>ORDER</td>
+<td>基于一个或多个字段（升序或降序）排列关系</td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td>LIMIT</td>
+<td>从关系中获取有限数量的元组</td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td>诊断运算符</td>
+</tr>
+<tr>
+<td>DUMP</td>
+<td>在控制台打印关系的内容</td>
+</tr>
+</tbody>
+</table>
+<h3 id="LOAD-运算符"><a href="#LOAD-运算符" class="headerlink" title="LOAD 运算符"></a>LOAD 运算符</h3><p>语法： load语句由两部分组成，用“=”运算符分隔。</p>
+<p>左侧是想要存储数据的关系的名称</p>
+<p>右侧是需要定义如何存储数据</p>
+<p><code>Relation_name = LOAD &#39;Input file path&#39; USING function as schema;</code></p>
+<ul>
+<li>releation_name：必须要提到要存储的关系</li>
+<li>Input file path：必须提到存储文件的HDFS目录(MapReduce模式)</li>
+<li>function：必须从Pig提供的一组加载函数中选择一个函数(BigStorage, JsonLoader, PigStorage, TextLoader)</li>
+<li>schema：必须定义数据的模式</li>
+</ul>
+<p><strong>PigStorage() 函数，将数据加载并存储为结构化文本文件。它采用分隔符，使用元组的每个实体作为参数分隔。默认情况下，它以“\t”作为参数。</strong></p>
+<h3 id="STORE-存储数据"><a href="#STORE-存储数据" class="headerlink" title="STORE 存储数据"></a>STORE 存储数据</h3><p>语法：<code>STORE Relation_name INTO &#39;required_directory_path&#39; [USING function];</code></p>
+<h3 id="Group运算符"><a href="#Group运算符" class="headerlink" title="Group运算符"></a>Group运算符</h3><p>用于在一个或多个关系中对数据进行分组，它收集具有相同key的数据</p>
+<p>语法：<code>Group_data = GROUP Relation_name BY age;</code></p>
+<h3 id="Foreach运算符"><a href="#Foreach运算符" class="headerlink" title="Foreach运算符"></a>Foreach运算符</h3><p>用于基于列数据生成指定的数据转换</p>
+<p>语法：<code>Relation_name2 = FOREACH Relation_name1 GENRATE (required data);</code></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-04-20T12:42:32.790Z" itemprop="dateUpdated">2019-04-20 20:42:32</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/04/20/Pig简单了解/" target="_blank" rel="external">http://yoursite.com/2019/04/20/Pig简单了解/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="白马文">
+            白马文
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Pig/">Pig</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/04/20/Pig简单了解/&title=《Pig简单了解》 — Baimawen's Blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/04/20/Pig简单了解/&title=《Pig简单了解》 — Baimawen's Blog&source=Blog about Recording Your Learning" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/04/20/Pig简单了解/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Pig简单了解》 — Baimawen's Blog&url=http://yoursite.com/2019/04/20/Pig简单了解/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/04/20/Pig简单了解/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/04/14/Spring的学习（一）/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Spring的学习（一）</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>白马文 &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/04/20/Pig简单了解/&title=《Pig简单了解》 — Baimawen's Blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/04/20/Pig简单了解/&title=《Pig简单了解》 — Baimawen's Blog&source=Blog about Recording Your Learning" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/04/20/Pig简单了解/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Pig简单了解》 — Baimawen's Blog&url=http://yoursite.com/2019/04/20/Pig简单了解/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/04/20/Pig简单了解/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJ0lEQVR42u3aQY7jMAwEwPn/p7PXWezE2005A1gqnQwjcVQ+MKTIr694vf5Z3++/+2R7/91nblsYGBiPZbwu1/V2Z89Jvps/EwMD4xzGuwiWXOc//w6TXP9nzxgYGBgfuL7O8TAwMDBmjOtNXD/nOinEwMDASBizZG69ZM1f3221OAYGxgMZ+an7719/pL+BgYHxKMarXPnTVlLGelcYGBhbM2YtzNmwRV70zpJIDAyMXRnJQVgbRvNNzw7afuBhYGBszWiD4AqmHcjIgzsGBsYJjOQH2oblLATPEkcMDIwTGOubWB9pzYN7lD5iYGBsx2iL2Pygv8W0g2hFXwIDA2MLxvpR2qwQTUJ51JbAwMDYlLE+ltqGznyLxd8DBgbGAYw8dK6E2uQV5GMcGBgY5zDa5OwuZF64Lo16YGBgbMGYHajNStOVohcDAwNjNsY6C6PtiGpUymJgYBzAaL+cB9yVkFoEawwMjK0Zs/I12W7STpi1LSM8BgbGdoxZGG0bAMW7nAV6DAyMYxhJGG03tIIpGhIYGBhbM/LD/ZWhsfwYbqmIxcDA2I7xKlcbEPNX045o/HUHAwNja8bKeESe2OWJZltUY2BgnMNoE7522GJlkAIDAwOjDXyzyN2G5jaVxMDAwGgP99tx2NlIWXFeiIGBcSQjD7ttopkE6NsCLgYGxgMZbWMyORprmw152fzDEzAwMLZmzErHlVbBbIu39TcwMDCexPgD7OLgBtlBIa8AAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

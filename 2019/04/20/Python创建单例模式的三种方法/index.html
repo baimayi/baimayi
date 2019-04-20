@@ -14,25 +14,25 @@
     
     
     
-    <title>Centos7安装数据库 | Baimawen&#39;s Blog</title>
+    <title>Python创建单例模式的三种方法 | Baimawen&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="Centos">
-    <meta name="description" content="MySQL 下载源安装包  wget http://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm  安装源  yum -y install mysql57-community-release-el7-11.noarch.rpm  安装MySQL服务器  yum install mysql-community-server">
-<meta name="keywords" content="Centos">
+    <meta name="keywords" content="设计模式">
+    <meta name="description" content="方法一：使用装饰器装饰器维护一个字典对象instances，缓存了所有的单例类，只要单例类不存在则创建，已经创建直接返回该实例对象。def singleton(cls):    instances = {} def wrapper(*args, **kwargs):     if cls not in instances:         instances[cls] = cls(*args, *">
+<meta name="keywords" content="设计模式">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Centos7安装数据库">
-<meta property="og:url" content="http://yoursite.com/2019/04/20/Centos7安装数据库/index.html">
+<meta property="og:title" content="Python创建单例模式的三种方法">
+<meta property="og:url" content="http://yoursite.com/2019/04/20/Python创建单例模式的三种方法/index.html">
 <meta property="og:site_name" content="Baimawen&#39;s Blog">
-<meta property="og:description" content="MySQL 下载源安装包  wget http://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm  安装源  yum -y install mysql57-community-release-el7-11.noarch.rpm  安装MySQL服务器  yum install mysql-community-server">
+<meta property="og:description" content="方法一：使用装饰器装饰器维护一个字典对象instances，缓存了所有的单例类，只要单例类不存在则创建，已经创建直接返回该实例对象。def singleton(cls):    instances = {} def wrapper(*args, **kwargs):     if cls not in instances:         instances[cls] = cls(*args, *">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-20T13:09:35.018Z">
+<meta property="og:updated_time" content="2019-04-20T13:15:45.623Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Centos7安装数据库">
-<meta name="twitter:description" content="MySQL 下载源安装包  wget http://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm  安装源  yum -y install mysql57-community-release-el7-11.noarch.rpm  安装MySQL服务器  yum install mysql-community-server">
+<meta name="twitter:title" content="Python创建单例模式的三种方法">
+<meta name="twitter:description" content="方法一：使用装饰器装饰器维护一个字典对象instances，缓存了所有的单例类，只要单例类不存在则创建，已经创建直接返回该实例对象。def singleton(cls):    instances = {} def wrapper(*args, **kwargs):     if cls not in instances:         instances[cls] = cls(*args, *">
     
         <link rel="alternate" type="application/atom+xml" title="Baimawen&#39;s Blog" href="/atom.xml">
     
@@ -120,7 +120,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Centos7安装数据库</div>
+        <div class="flex-col header-title ellipsis">Python创建单例模式的三种方法</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -142,15 +142,15 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Centos7安装数据库</h1>
+        <h1 class="title">Python创建单例模式的三种方法</h1>
         <h5 class="subtitle">
             
-                <time datetime="2019-04-20T12:45:55.000Z" itemprop="datePublished" class="page-time">
+                <time datetime="2019-04-20T13:14:50.000Z" itemprop="datePublished" class="page-time">
   2019-04-20
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Linux/">Linux</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Python/">Python</a></li></ul>
 
             
         </h5>
@@ -164,23 +164,16 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#MySQL"><span class="post-toc-number">1.</span> <span class="post-toc-text">MySQL</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Redis"><span class="post-toc-number">2.</span> <span class="post-toc-text">Redis</span></a></li></ol>
-        </nav>
-    </aside>
 
-
-<article id="post-Centos7安装数据库" class="post-article article-type-post fade" itemprop="blogPost">
+<article id="post-Python创建单例模式的三种方法" class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Centos7安装数据库</h1>
+        <h1 class="post-card-title">Python创建单例模式的三种方法</h1>
         <div class="post-meta">
-            <time class="post-time" title="2019-04-20 20:45:55" datetime="2019-04-20T12:45:55.000Z" itemprop="datePublished">2019-04-20</time>
+            <time class="post-time" title="2019-04-20 21:14:50" datetime="2019-04-20T13:14:50.000Z" itemprop="datePublished">2019-04-20</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Linux/">Linux</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Python/">Python</a></li></ul>
 
 
 
@@ -192,54 +185,23 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h2 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h2><ol>
-<li>下载源安装包</li>
-</ol>
-<p><code>wget http://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm</code></p>
-<ol start="2">
-<li>安装源</li>
-</ol>
-<p><code>yum -y install mysql57-community-release-el7-11.noarch.rpm</code></p>
-<ol start="3">
-<li>安装MySQL服务器</li>
-</ol>
-<p><code>yum install mysql-community-server</code></p>
-<ol start="4">
-<li>启动并设置开机自启</li>
-</ol>
-<p><code>systemctl start  mysqld.service</code></p>
-<p><code>systemctl enable mysqld.service</code></p>
-<ol start="5">
-<li>初始化数据库密码</li>
-</ol>
-<p><code>grep &quot;password&quot; /var/log/mysqld.log</code></p>
-<p>#修改默认密码策略</p>
-<p><code>set global validate_password_policy=0;</code>    </p>
-<p><code>set global validate_password_length=1;</code></p>
-<p><code>set password = password(&#39;123456&#39;);</code> #设置密码</p>
-<ol start="6">
-<li>数据库授权</li>
-</ol>
-<p><code>mysql&gt;GRANT ALL PRIVILEGES ON *.* TO &#39;root&#39;@&#39;%&#39; IDENTIFIED BY &#39;123456&#39; WITH GRANT OPTION;</code></p>
-<h2 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h2><ol>
-<li>下载安装包</li>
-</ol>
-<p><code>wget http://download.redis.io/releases/redis-4.0.6.tar.gz</code></p>
-<ol start="2">
-<li>解压Redis</li>
-</ol>
-<p><code>mkidr /usr/local/redis</code></p>
-<p><code>tar -zxvf redis-4.0.6.tar.gz -C /usr/local/redis/</code></p>
-<ol start="3">
-<li>安装gcc依赖</li>
-</ol>
-<p><code>yum install gcc</code></p>
-<ol start="4">
-<li>编译安装</li>
-</ol>
-<p><code>cd /usr/local/redis/redis-4.0.6</code></p>
-<p><code>make MALLOC=libc</code></p>
-<p><code>cd src &amp;&amp; make install</code></p>
+            <p>方法一：使用装饰器<br>装饰器维护一个字典对象instances，缓存了所有的单例类，只要单例类不存在则创建，已经创建直接返回该实例对象。<br>def singleton(cls):<br>    instances = {}</p>
+<pre><code>def wrapper(*args, **kwargs):
+    if cls not in instances:
+        instances[cls] = cls(*args, **kwargs)
+    return instances[cls]
+return wrapper
+</code></pre><p>@singleton<br>class Foo(object):<br>    pass</p>
+<p>foo1 = Foo()<br>foo2 = Foo()</p>
+<p>print(id(foo1), id(foo2))</p>
+<p>方法二：使用基类<br><strong>new</strong>是真正创建实例对象的方法，所以重写基类的<strong>new</strong>方法，以此来保证创建对象的时候只生成一个实例。<br>class Singleton(object):<br>    def <strong>new</strong>(cls, <em>args, **kwargs):<br>        if not hasattr(cls, ‘_instance’):<br>            cls._instance = super(Singleton, cls).<strong>new</strong>(cls, </em>args, **kwargs)<br>        return cls._instance</p>
+<p>class Foo(Singleton):<br>    pass</p>
+<p>foo1 = Foo()<br>foo2 = Foo()</p>
+<p>print(foo1 is foo2)</p>
+<p>方法三：使用元类<br>元类是用于创建类对象的类， 类对象创建实例对象时一定会调用<strong>call</strong>方法，因此在调用<strong>call</strong>时候保证始终只创建一个实例即可，type是Python中的一个元类。<br>class Singleton(type):<br>    def <strong>call</strong>(cls, <em>args, **kwargs):<br>        if not hasattr(cls, ‘_instance’):<br>            cls._instance = super(Singleton, cls).<strong>call</strong>(</em>args, **kwargs)<br>        return cls._instance</p>
+<p>class Foo(object):<br>    <strong>metaclass</strong> = Singleton</p>
+<p>foo1 = Foo()<br>foo2 = Foo()</p>
+<p>print(foo1 is foo2)</p>
 
         </div>
 
@@ -248,12 +210,12 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-04-20T13:09:35.018Z" itemprop="dateUpdated">2019-04-20 21:09:35</time>
+    最后更新时间：<time datetime="2019-04-20T13:15:45.623Z" itemprop="dateUpdated">2019-04-20 21:15:45</time>
 </span><br>
 
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/04/20/Centos7安装数据库/" target="_blank" rel="external">http://yoursite.com/2019/04/20/Centos7安装数据库/</a>
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/04/20/Python创建单例模式的三种方法/" target="_blank" rel="external">http://yoursite.com/2019/04/20/Python创建单例模式的三种方法/</a>
         
     </div>
     
@@ -274,7 +236,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Centos/">Centos</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
 
 
             
@@ -284,7 +246,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/04/20/Centos7安装数据库/&title=《Centos7安装数据库》 — Baimawen's Blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/04/20/Python创建单例模式的三种方法/&title=《Python创建单例模式的三种方法》 — Baimawen's Blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -294,22 +256,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/04/20/Centos7安装数据库/&title=《Centos7安装数据库》 — Baimawen's Blog&source=Blog about Recording Your Learning" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/04/20/Python创建单例模式的三种方法/&title=《Python创建单例模式的三种方法》 — Baimawen's Blog&source=Blog about Recording Your Learning" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/04/20/Centos7安装数据库/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/04/20/Python创建单例模式的三种方法/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Centos7安装数据库》 — Baimawen's Blog&url=http://yoursite.com/2019/04/20/Centos7安装数据库/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Python创建单例模式的三种方法》 — Baimawen's Blog&url=http://yoursite.com/2019/04/20/Python创建单例模式的三种方法/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/04/20/Centos7安装数据库/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/04/20/Python创建单例模式的三种方法/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -332,18 +294,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2019/04/20/Python创建单例模式的三种方法/" id="post-prev" class="post-nav-link">
+      <a href="/2019/04/20/Virtualenv虚拟环境/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Python创建单例模式的三种方法</h4>
+        <h4 class="title">Virtualenv虚拟环境</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2019/04/20/Pig简单了解/" id="post-next" class="post-nav-link">
+      <a href="/2019/04/20/Centos7安装数据库/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Pig简单了解</h4>
+        <h4 class="title">Centos7安装数据库</h4>
       </a>
     </div>
   
@@ -442,7 +404,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/04/20/Centos7安装数据库/&title=《Centos7安装数据库》 — Baimawen's Blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/04/20/Python创建单例模式的三种方法/&title=《Python创建单例模式的三种方法》 — Baimawen's Blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -452,22 +414,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/04/20/Centos7安装数据库/&title=《Centos7安装数据库》 — Baimawen's Blog&source=Blog about Recording Your Learning" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/04/20/Python创建单例模式的三种方法/&title=《Python创建单例模式的三种方法》 — Baimawen's Blog&source=Blog about Recording Your Learning" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/04/20/Centos7安装数据库/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/04/20/Python创建单例模式的三种方法/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Centos7安装数据库》 — Baimawen's Blog&url=http://yoursite.com/2019/04/20/Centos7安装数据库/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Python创建单例模式的三种方法》 — Baimawen's Blog&url=http://yoursite.com/2019/04/20/Python创建单例模式的三种方法/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/04/20/Centos7安装数据库/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/04/20/Python创建单例模式的三种方法/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -478,7 +440,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLElEQVR42u3aQW6EMAwF0Ln/panUVaUR6NtmqiF5rBBNkzwWHhz79Yqv4/c6u//75P35+5j38dez3XZhYGA8lnFcXtdbPxuZzJm/smgeDAyMDRjV6a5fRDJPMkOyNwwMDIyzMcnmkuWTmTEwMDCqAbf6gXj9JL/HwMDA6G2rmnYm6ejHc3EMDIwHMuaFgc/d/2t9AwMD4ysZvbA4D9C98ufpihgYGEsz8iOwT6S1k2S4eZKHgYHxQEbvo20SgqsfhUmii4GBsTbj3uLi5EX00mkMDIwdGNViYXXhPJXNm8NOc3EMDIxFGb0EtXc+n4xPXlY5ocXAwHg4I08g8yXztDNZMZoBAwNjacYkfa2WE3pBvPADgIGBsSgjCZflo/mbjtiS4IuBgbEno9dskR+NzV8HBgbGboxeYTJvpKiG0V5hFQMDYwdGNTjmiWi1gXXyijEwMPZhVIuLefFg0vyat25gYGCsx5g3OlSbtxJGOanGwMBYmtE75KoWGvPx+TxRgQEDA2MJRr5wtVWrVwDIdzL6ZwwMjAcy8ul6m87vm78YGBgYSzPyoXcF1qQY0AzKGBgYizKO4lXdRK9drFoewMDAWJtRDXb5oX+vIWOCx8DAWJuRB9nJJ2D147JaZsDAwNiBUW2tmLRi9D7yokImBgbG9oxqqWD+18KhHgYGBkbrOOyugButjoGBsQGjWgzIQ3AecHvHeRgYGDsweoWBHq8aiG8uZGJgYDyP8QNgzYmHVTFmlwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACxklEQVR42u3aQW4jMQwEQP//01lgr9nxdpNSnEPNyXBsj4oBRA6p1yu+vv5eT+8kr79/9/sn8/cPX3h4eHijpT9d7xf6Hvz+N5OV5OF4/H08PDy8a7xkue1fkzA9LSvhJQkMDw8P77O894vIYXmamRXreHh4eL+HlyeJpHTO7/WjeQ8PDw8v5iXNiPeP/bPbt02Hi70WPDw8vEkftWjRfvb1xfkeHh4e3mKqnm+7ScJojxG0Q7V/rAEPDw/vAi9vH7QD/tlG34YyShh4eHh413jt5ptXsEmjYRa+KHB4eHh413jtEGtz1CC/16zF/NrcEg8PDy/m5WVuXs5uNv1ZKV90oPHw8PAO8drEsCl/96GMwo2Hh4d3lDcbaLVJZdaobZvOj6MvPDw8vKO8zdhplirylsT7YNX/Qzw8PLyjvLZhmh+WalPFgTSQRx0PDw9vxNsvLr9Z8punhmF4eHh493izRW+aFDPMKpHg4eHhHeW1JfK+MdEew5p9N8o5eHh4eCPe/lhAPuiaNTuSxJMPz/Dw8PDO8vJx/qkS+X0ySJq/xQkBPDw8vEO8pFTN2685qZ3ODY8U4OHh4V3jbY5Y5Rv3rAWc3+UxMeDh4eEd5SVpoE0SbQhmg7QiuHh4eHiXebPGQT6ISkrqtpSPpnx4eHh4R3nJAKy9fVtkt6niQJsDDw8Pb81rC+t8uJWX1HkoixMQeHh4eBd4OWa2iecFcdsQOfDEgIeHh7fgvcprs7h7DeLHYhoPDw/vEO+rvPImwvCY1Kjd8LhaPDw8vAu8Ng1sRv5tw3cfMjw8PLx7vPbxvm2/5q2KDRsPDw/v53n5Q36SYYo26yjxFEe18PDw8H4Br93W29FaPkiLgoKHh4f3UV5e1LZLbIOSrBkPDw/vNm9/7Kndsk8d8/pPcPHw8PAu8NoBWF5AFy2DOBDtJ/Hw8PCO8v4A9fsiFtPhpNIAAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 

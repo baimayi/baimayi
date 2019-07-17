@@ -1,183 +1,217 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html>
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>XML &amp; Tomcat - Baimawen&#39;s Blog</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-
-
-    <meta name="description" content="关于XML和Tomcat的学习笔记">
-<meta name="keywords" content="XML,Tomcat">
-<meta property="og:type" content="article">
-<meta property="og:title" content="XML &amp; Tomcat">
-<meta property="og:url" content="http://yoursite.com/2019/03/28/XML&Tomcat/index.html">
-<meta property="og:site_name" content="Baimawen&#39;s Blog">
-<meta property="og:description" content="关于XML和Tomcat的学习笔记">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/img/streetwear.jpg">
-<meta property="og:updated_time" content="2019-04-21T13:49:17.729Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="XML &amp; Tomcat">
-<meta name="twitter:description" content="关于XML和Tomcat的学习笔记">
-<meta name="twitter:image" content="http://yoursite.com/img/streetwear.jpg">
-
-
-
-
-
-
-
-<link rel="icon" href="/img/grim.svg">
-
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/googlecode.css">
-
-
     
     
+    <title>XML &amp; Tomcat | Baimawen&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    <meta name="keywords" content="XML,Tomcat">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.3">
     
-
+    <script type="text/javascript">
+        // Data Center
+        var DC = {
+            reward:	true,
+            lv: JSON.parse('{"enable":false,"app_id":null,"app_key":null,"icon":true}'),
+            v: JSON.parse('{"enable":false,"appid":null,"appkey":null,"notify":true,"verify":true,"placeholder":"give me some sugers plz...","avatar":"wavatar"}'),
+            g: JSON.parse('{"enable":false,"lazy":true,"owner":"codefine","repo":"gitment","oauth":{"client_id":null,"client_secret":null},"perPage":10}'),
+            d: JSON.parse('{"app_id":null}')
+        };
+    </script>
+    <script type="text/javascript">
+        window.lazyScripts=[];
+    </script>
     
-    
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
-    
-
-    
-    
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
-
-
-    
-    
-    
-    
-
-<link rel="stylesheet" href="/css/back-to-top.css">
-
-
-    
-    
-
-    
-    
-    
-    
-
-    
-    
-<link rel="stylesheet" href="/css/progressbar.css">
-<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
-
-    
-    
-    
-
-    
-    
-    
-
-
-<link rel="stylesheet" href="/css/style.css">
 </head>
-<body class="is-3-column">
-    <nav class="navbar navbar-main">
-    <div class="container">
-        <div class="navbar-brand is-flex-center">
-            <a class="navbar-item navbar-logo" href="/">
+
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class>
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      
+      <img src="/img/brand.jpg" class="brand-bg">
+      
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">白马文</h5>
+          <a href="mailto:915841983@qq.com" title="915841983@qq.com" class="mail">
             
-                <img src="/img/grim.svg" alt="XML &amp; Tomcat" height="28">
+              <span>9</span>
             
-            </a>
-        </div>
-        <div class="navbar-menu">
+              <span>1</span>
             
-            <div class="navbar-start">
-                
-                <a class="navbar-item" href="/">主页</a>
-                
-                <a class="navbar-item" href="/archives">时间线</a>
-                
-                <a class="navbar-item" href="/categories">分类</a>
-                
-                <a class="navbar-item" href="/tags">标签</a>
-                
-                <a class="navbar-item" href="/about">关于我</a>
-                
-            </div>
+              <span>5</span>
             
-            <div class="navbar-end">
-                
-                    
-                    
-                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="http://github.com/ppoffice/hexo-theme-icarus">
-                        
-                        <i class="fab fa-github"></i>
-                        
-                    </a>
-                    
-                
-                
-                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
-                    <i class="fas fa-list-ul"></i>
+              <span>8</span>
+            
+              <span>4</span>
+            
+              <span>1</span>
+            
+              <span>9</span>
+            
+              <span>8</span>
+            
+              <span>3</span>
+            
+              <span>@</span>
+            
+              <span>q</span>
+            
+              <span>q</span>
+            
+              <span>.</span>
+            
+              <span>c</span>
+            
+              <span>o</span>
+            
+              <span>m</span>
+            
+          </a>
+        </hgroup>
+        
+        <ul class="menu-link">
+          
+              <li>
+                <a href="https://github.com/baimawen" target="_blank">
+                  <i class="icon icon-lg icon-github"></i>
                 </a>
-                
-                
-                <a class="navbar-item search" title="搜索" href="javascript:;">
-                    <i class="fas fa-search"></i>
-                </a>
-                
-            </div>
-        </div>
+              </li>
+            
+        </ul>
+        
+      </div>
     </div>
-</nav>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class>
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class>
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class>
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class>
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                档案
+              </a>
+            </li>
+        
+            <li class>
+              <a href="/about">
+                <i class="icon icon-lg icon-user"></i>
+                关于我
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row clearfix">
+        <a href="javascript:;" class="header-icon pull-left waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            <span>XML &amp; Tomcat</span>
+            
+        </div>
+        
+        <a href="javascript:;" id="site_search_btn" class="header-icon pull-right waves-effect waves-circle waves-light">
+            <i class="icon icon-lg icon-search"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <img src="https://i.imgur.com/rVtDsho.png" class="header-bg">
+    <div class="container fade-scale">
+        <h1 class="title">XML &amp; Tomcat</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-03-28T15:27:20.000Z" itemprop="datePublished" class="page-time">
+  2019-03-28
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Java/">Java</a></li></ul>
+
+            
+        </h5>
+        
+    </div>
     
-    <section class="section">
-        <div class="container">
-            <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
-    
-    <div class="card-image">
-        <span class="image is-7by1">
-            <img class="thumbnail" src="/img/streetwear.jpg" alt="XML &amp; Tomcat">
+
+</header>
+
+<div id="site_search">
+    <div class="search-title clearfix">
+        <span class="pull-left">
+          <i class="icon icon-lg icon-search"></i>
         </span>
+        <input type="text" id="local-search-input" name="q" results="0" placeholder="search my blog..." class="form-control pull-left">
+        <a href="javascript:;" class="close pull-right waves-effect waves-circle waves-light">
+          <i class="icon icon-lg icon-close"></i>
+        </a>
     </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-03-28T15:27:20.000Z">2019-03-28</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java/">Java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    11 分钟 读完 (大约 1627 个字)
-                </span>
-                
-                
-            </div>
+    <div id="local-search-result"></div>
+</div>
+
+
+<div class="container body-wrap">
+    <article id="post-XML&amp;Tomcat" class="post-article article-type-post" itemprop="blogPost">
+    <div class="post-card">
+        <h1 class="post-card-title">XML & Tomcat</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-03-28 23:27:20" datetime="2019-03-28T15:27:20.000Z" itemprop="datePublished">2019-03-28</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Java/">Java</a></li></ul>
+
+
+
+            
+
+            
+
+
+            
         </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+        <div class="post-content" id="post-content" itemprop="postContent">
             
-                XML &amp; Tomcat
-            
-        </h1>
-        <div class="content">
             <p>关于XML和Tomcat的学习笔记<br><a id="more"></a></p>
 <h2 id="XML-amp-Tomcat"><a href="#XML-amp-Tomcat" class="headerlink" title="XML &amp; Tomcat"></a>XML &amp; Tomcat</h2><blockquote>
 <p>被设计用来传输和存储数据</p>
@@ -236,16 +270,16 @@
 <li>DTD文件是一个ASCII的文本文件，后缀名为.dtd</li>
 </ul>
 </blockquote>
-<p>通过引入的方式：<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">文档类型   根标签名字   网络上的dtd    dtd的路径</span><br><span class="line">&lt;!DOCTYPE stus PUBLIC &quot;//UNKNOWN/&quot; &quot;unknown.dtd&quot;&gt;</span><br><span class="line"></span><br><span class="line">本地的为</span><br><span class="line">&lt;!DOCTYPE stus SYSTEM &quot;stus.dtd&quot;&gt;</span><br></pre></td></tr></table></figure></p>
-<p>直接在XML里面嵌入DTD的约束规则：<br><figure class="highlight xml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">&lt;!DOCTYPE stus [</span></span><br><span class="line"><span class="hljs-meta">    &lt;!ELEMENT stus (stu)&gt;</span></span><br><span class="line"><span class="hljs-meta">    &lt;!ELEMENT stu (name,age,address)&gt;</span></span><br><span class="line"><span class="hljs-meta">    &lt;!ELEMENT name (#PCDATA)&gt;</span></span><br><span class="line"><span class="hljs-meta">    &lt;!ELEMENT age (#PCDATA)&gt;</span></span><br><span class="line"><span class="hljs-meta">    &lt;!ELEMENT address (#PCDATA)&gt;</span></span><br><span class="line"><span class="hljs-meta">]&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">stus</span>&gt;</span></span><br><span class="line">	<span class="hljs-tag">&lt;<span class="hljs-name">stu</span>&gt;</span></span><br><span class="line">		<span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>李四<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span></span><br><span class="line">		<span class="hljs-tag">&lt;<span class="hljs-name">age</span>&gt;</span>12<span class="hljs-tag">&lt;/<span class="hljs-name">age</span>&gt;</span></span><br><span class="line">		<span class="hljs-tag">&lt;<span class="hljs-name">address</span>&gt;</span>武汉<span class="hljs-tag">&lt;/<span class="hljs-name">address</span>&gt;</span></span><br><span class="line">	<span class="hljs-tag">&lt;/<span class="hljs-name">stu</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">stus</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="XML-Schema"><a href="#XML-Schema" class="headerlink" title="XML Schema"></a>XML Schema</h3><p>约束文档<br><figure class="highlight xsd hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="hljs-comment">&lt;!-- xmlns-&gt;xml namespace 命名空间</span></span><br><span class="line"><span class="hljs-comment">目标名称空间，下面的那些元素都与这个命名空间绑定上</span></span><br><span class="line"><span class="hljs-comment">targetNamespace="http://www.example.org/teacher"</span></span><br><span class="line"><span class="hljs-comment">元素的格式化情况</span></span><br><span class="line"><span class="hljs-comment">elementFormDefault="qualified"&gt; --&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">schema</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://www.w3.org/2001/XMLSchema"</span></span></span><br><span class="line"><span class="hljs-tag">	<span class="hljs-attr">targetNamespace</span>=<span class="hljs-string">"http://www.example.org/teacher"</span></span></span><br><span class="line"><span class="hljs-tag">	<span class="hljs-attr">xmlns:tns</span>=<span class="hljs-string">"http://www.example.org/teacher"</span></span></span><br><span class="line"><span class="hljs-tag">	<span class="hljs-attr">elementFormDefault</span>=<span class="hljs-string">"qualified"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="hljs-tag">&lt;<span class="hljs-name">element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"teachers"</span>&gt;</span></span><br><span class="line">		<span class="hljs-tag">&lt;<span class="hljs-name">complexType</span>&gt;</span></span><br><span class="line">			<span class="hljs-tag">&lt;<span class="hljs-name">sequence</span> <span class="hljs-attr">maxOccurs</span>=<span class="hljs-string">"unbounded"</span>&gt;</span></span><br><span class="line">				<span class="hljs-comment">&lt;!-- 这是一个复杂元素 --&gt;</span></span><br><span class="line">				<span class="hljs-tag">&lt;<span class="hljs-name">element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"teacher"</span>&gt;</span></span><br><span class="line">					<span class="hljs-comment">&lt;!-- 这是用于声明teacher元素是复杂元素 --&gt;</span></span><br><span class="line">					<span class="hljs-tag">&lt;<span class="hljs-name">complexType</span>&gt;</span></span><br><span class="line">						<span class="hljs-tag">&lt;<span class="hljs-name">sequence</span>&gt;</span></span><br><span class="line">							<span class="hljs-comment">&lt;!-- 以下两个是简单元素 --&gt;</span></span><br><span class="line">							<span class="hljs-tag">&lt;<span class="hljs-name">element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"name"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"string"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">element</span>&gt;</span></span><br><span class="line">							<span class="hljs-tag">&lt;<span class="hljs-name">element</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"age"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"int"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">element</span>&gt;</span></span><br><span class="line">						<span class="hljs-tag">&lt;/<span class="hljs-name">sequence</span>&gt;</span></span><br><span class="line">					<span class="hljs-tag">&lt;/<span class="hljs-name">complexType</span>&gt;</span></span><br><span class="line">				<span class="hljs-tag">&lt;/<span class="hljs-name">element</span>&gt;</span></span><br><span class="line">			<span class="hljs-tag">&lt;/<span class="hljs-name">sequence</span>&gt;</span></span><br><span class="line">		<span class="hljs-tag">&lt;/<span class="hljs-name">complexType</span>&gt;</span></span><br><span class="line">	<span class="hljs-tag">&lt;/<span class="hljs-name">element</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">schema</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>实例文档<br><figure class="highlight xml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">&lt;!-- xmlns:xsi 必须是这样的写法，也就是这个值固定了 xmlns 这里是命名空间，也固定了，写的是schema里面的顶部目标命名空间</span></span><br><span class="line"><span class="hljs-comment">	xsi:schemaLocation 有两段，前面是命名空间，也就是目标空间的值，后面是约束文档的路径 --&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">teachers</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="hljs-tag">	<span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://www.w3.org/2001/XMLSchema"</span></span></span><br><span class="line"><span class="hljs-tag">	<span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">"http://www.w3.org/2001/XMLSchema teacher.xsd"</span>&gt;</span></span><br><span class="line">	<span class="hljs-tag">&lt;<span class="hljs-name">teacher</span>&gt;</span></span><br><span class="line">		<span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>z<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span></span><br><span class="line">		<span class="hljs-tag">&lt;<span class="hljs-name">age</span>&gt;</span>12<span class="hljs-tag">&lt;/<span class="hljs-name">age</span>&gt;</span></span><br><span class="line">	<span class="hljs-tag">&lt;/<span class="hljs-name">teacher</span>&gt;</span></span><br><span class="line">	<span class="hljs-tag">&lt;<span class="hljs-name">teacher</span>&gt;</span></span><br><span class="line">		<span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>z<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span></span><br><span class="line">		<span class="hljs-tag">&lt;<span class="hljs-name">age</span>&gt;</span>12<span class="hljs-tag">&lt;/<span class="hljs-name">age</span>&gt;</span></span><br><span class="line">	<span class="hljs-tag">&lt;/<span class="hljs-name">teacher</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">teachers</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>通过引入的方式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">文档类型   根标签名字   网络上的dtd    dtd的路径</span><br><span class="line">&lt;!DOCTYPE stus PUBLIC &quot;//UNKNOWN/&quot; &quot;unknown.dtd&quot;&gt;</span><br><span class="line"></span><br><span class="line">本地的为</span><br><span class="line">&lt;!DOCTYPE stus SYSTEM &quot;stus.dtd&quot;&gt;</span><br></pre></td></tr></table></figure></p>
+<p>直接在XML里面嵌入DTD的约束规则：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;!DOCTYPE stus [</span></span><br><span class="line"><span class="meta">    &lt;!ELEMENT stus (stu)&gt;</span></span><br><span class="line"><span class="meta">    &lt;!ELEMENT stu (name,age,address)&gt;</span></span><br><span class="line"><span class="meta">    &lt;!ELEMENT name (#PCDATA)&gt;</span></span><br><span class="line"><span class="meta">    &lt;!ELEMENT age (#PCDATA)&gt;</span></span><br><span class="line"><span class="meta">    &lt;!ELEMENT address (#PCDATA)&gt;</span></span><br><span class="line"><span class="meta">]&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">stus</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">stu</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">name</span>&gt;</span>李四<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">age</span>&gt;</span>12<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">address</span>&gt;</span>武汉<span class="tag">&lt;/<span class="name">address</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">stu</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">stus</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="XML-Schema"><a href="#XML-Schema" class="headerlink" title="XML Schema"></a>XML Schema</h3><p>约束文档<br><figure class="highlight xsd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- xmlns-&gt;xml namespace 命名空间</span></span><br><span class="line"><span class="comment">目标名称空间，下面的那些元素都与这个命名空间绑定上</span></span><br><span class="line"><span class="comment">targetNamespace="http://www.example.org/teacher"</span></span><br><span class="line"><span class="comment">元素的格式化情况</span></span><br><span class="line"><span class="comment">elementFormDefault="qualified"&gt; --&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">schema</span> <span class="attr">xmlns</span>=<span class="string">"http://www.w3.org/2001/XMLSchema"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">targetNamespace</span>=<span class="string">"http://www.example.org/teacher"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xmlns:tns</span>=<span class="string">"http://www.example.org/teacher"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">elementFormDefault</span>=<span class="string">"qualified"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">element</span> <span class="attr">name</span>=<span class="string">"teachers"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">complexType</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">sequence</span> <span class="attr">maxOccurs</span>=<span class="string">"unbounded"</span>&gt;</span></span><br><span class="line">				<span class="comment">&lt;!-- 这是一个复杂元素 --&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">element</span> <span class="attr">name</span>=<span class="string">"teacher"</span>&gt;</span></span><br><span class="line">					<span class="comment">&lt;!-- 这是用于声明teacher元素是复杂元素 --&gt;</span></span><br><span class="line">					<span class="tag">&lt;<span class="name">complexType</span>&gt;</span></span><br><span class="line">						<span class="tag">&lt;<span class="name">sequence</span>&gt;</span></span><br><span class="line">							<span class="comment">&lt;!-- 以下两个是简单元素 --&gt;</span></span><br><span class="line">							<span class="tag">&lt;<span class="name">element</span> <span class="attr">name</span>=<span class="string">"name"</span> <span class="attr">type</span>=<span class="string">"string"</span>&gt;</span><span class="tag">&lt;/<span class="name">element</span>&gt;</span></span><br><span class="line">							<span class="tag">&lt;<span class="name">element</span> <span class="attr">name</span>=<span class="string">"age"</span> <span class="attr">type</span>=<span class="string">"int"</span>&gt;</span><span class="tag">&lt;/<span class="name">element</span>&gt;</span></span><br><span class="line">						<span class="tag">&lt;/<span class="name">sequence</span>&gt;</span></span><br><span class="line">					<span class="tag">&lt;/<span class="name">complexType</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;/<span class="name">element</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">sequence</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">complexType</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">element</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">schema</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>实例文档<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- xmlns:xsi 必须是这样的写法，也就是这个值固定了 xmlns 这里是命名空间，也固定了，写的是schema里面的顶部目标命名空间</span></span><br><span class="line"><span class="comment">	xsi:schemaLocation 有两段，前面是命名空间，也就是目标空间的值，后面是约束文档的路径 --&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">teachers</span> <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xmlns</span>=<span class="string">"http://www.w3.org/2001/XMLSchema"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xsi:schemaLocation</span>=<span class="string">"http://www.w3.org/2001/XMLSchema teacher.xsd"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">teacher</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">name</span>&gt;</span>z<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">age</span>&gt;</span>12<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">teacher</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">teacher</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">name</span>&gt;</span>z<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">age</span>&gt;</span>12<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">teacher</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">teachers</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <h4 id="命名空间的作用"><a href="#命名空间的作用" class="headerlink" title="命名空间的作用"></a>命名空间的作用</h4><p>一个xml如果想指定它的约束规则，假设使用的是DTD，那么这个xml只能指定一个DTD</p>
 <p>但是如果一个xml的约束是定义在schema里面，并且是多个schema，那么是可以的。</p>
 <p>简单来说：一个xml可以引用多个schema约束，但是只能引用一个DTD约束。</p>
 <p>名称空间的作用就是在写元素的时候，可以指定该元素使用的是哪一套约束规则。</p>
 <p>默认情况下，如果只有一套规则，那么都可以这么写。</p>
-<figure class="highlight xml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>zhangsan<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">aa:name</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">bb:name</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>zhangsan<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">aa:name</span>&gt;</span><span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bb:name</span>&gt;</span><span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h3 id="XMl解析方式"><a href="#XMl解析方式" class="headerlink" title="XMl解析方式"></a>XMl解析方式</h3><blockquote>
 <p>DOM：document object model</p>
 </blockquote>
@@ -269,13 +303,13 @@
 <li>获取根元素</li>
 <li>根据根元素获取子元素或者下面的子孙元素</li>
 </ol>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">try</span> &#123;</span><br><span class="line">			<span class="hljs-comment">// 1. 创建sax读取对象</span></span><br><span class="line">			SAXReader reader = <span class="hljs-keyword">new</span> SAXReader();</span><br><span class="line"></span><br><span class="line">			<span class="hljs-comment">// 2. 指定解析的xml文件</span></span><br><span class="line">			Document document = reader.read(<span class="hljs-keyword">new</span> File(<span class="hljs-string">"src/xml/stus.xml"</span>));</span><br><span class="line"></span><br><span class="line">			<span class="hljs-comment">// 3. 得到元素</span></span><br><span class="line">			Element rootElement = document.getRootElement();</span><br><span class="line">			String name = rootElement.element(<span class="hljs-string">"stu"</span>).element(<span class="hljs-string">"name"</span>).getStringValue();</span><br><span class="line">			<span class="hljs-comment">//System.out.println(name);</span></span><br><span class="line"></span><br><span class="line">			<span class="hljs-comment">// 获取根元素下的所有元素</span></span><br><span class="line">			List&lt;Element&gt; elements = rootElement.elements();</span><br><span class="line">			<span class="hljs-keyword">for</span> (Element element : elements) &#123;</span><br><span class="line">				String value1 = element.getStringValue();</span><br><span class="line">				String value2 = element.element(<span class="hljs-string">"name"</span>).getText();</span><br><span class="line">				System.out.println(value2);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			<span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> handle exception</span></span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">			<span class="comment">// 1. 创建sax读取对象</span></span><br><span class="line">			SAXReader reader = <span class="keyword">new</span> SAXReader();</span><br><span class="line"></span><br><span class="line">			<span class="comment">// 2. 指定解析的xml文件</span></span><br><span class="line">			Document document = reader.read(<span class="keyword">new</span> File(<span class="string">"src/xml/stus.xml"</span>));</span><br><span class="line"></span><br><span class="line">			<span class="comment">// 3. 得到元素</span></span><br><span class="line">			Element rootElement = document.getRootElement();</span><br><span class="line">			String name = rootElement.element(<span class="string">"stu"</span>).element(<span class="string">"name"</span>).getStringValue();</span><br><span class="line">			<span class="comment">//System.out.println(name);</span></span><br><span class="line"></span><br><span class="line">			<span class="comment">// 获取根元素下的所有元素</span></span><br><span class="line">			List&lt;Element&gt; elements = rootElement.elements();</span><br><span class="line">			<span class="keyword">for</span> (Element element : elements) &#123;</span><br><span class="line">				String value1 = element.getStringValue();</span><br><span class="line">				String value2 = element.element(<span class="string">"name"</span>).getText();</span><br><span class="line">				System.out.println(value2);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			<span class="comment">// <span class="doctag">TODO:</span> handle exception</span></span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="Dom4j的Xpath使用"><a href="#Dom4j的Xpath使用" class="headerlink" title="Dom4j的Xpath使用"></a>Dom4j的Xpath使用</h4><ol>
 <li>添加jar包依赖        jaxen-1.1-beta-6.jar</li>
 <li>在查找指定节点的时候，根据Xpath语法规则来查找</li>
 <li>后续的代码与以前的解析一样</li>
 </ol>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 要想使用Xpath，还得添加支持的jar:jaxen</span></span><br><span class="line"><span class="hljs-comment">// 获取的是第一个，只返回一个</span></span><br><span class="line">Element nameElement = (Element) rootElement.selectSingleNode(<span class="hljs-string">"//name"</span>);</span><br><span class="line">System.out.println(nameElement.getName());</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 获取文档里面的所有name元素</span></span><br><span class="line">List&lt;Element&gt; list = rootElement.selectNodes(<span class="hljs-string">"//name"</span>);</span><br><span class="line"><span class="hljs-keyword">for</span> (Element element : list) &#123;</span><br><span class="line">	System.out.println(element.getText());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 要想使用Xpath，还得添加支持的jar:jaxen</span></span><br><span class="line"><span class="comment">// 获取的是第一个，只返回一个</span></span><br><span class="line">Element nameElement = (Element) rootElement.selectSingleNode(<span class="string">"//name"</span>);</span><br><span class="line">System.out.println(nameElement.getName());</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取文档里面的所有name元素</span></span><br><span class="line">List&lt;Element&gt; list = rootElement.selectNodes(<span class="string">"//name"</span>);</span><br><span class="line"><span class="keyword">for</span> (Element element : list) &#123;</span><br><span class="line">	System.out.println(element.getText());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="Tomcat目录"><a href="#Tomcat目录" class="headerlink" title="Tomcat目录"></a>Tomcat目录</h2><p>bin<br>    包含了一些jar，bat文件    startup.bat</p>
 <p>conf<br>    tomcat的配置    server.xml    web.xml</p>
 <p>lib<br>    tomcat运行所需的jar文件</p>
@@ -301,929 +335,261 @@
 
         </div>
         
-        <div class="level is-size-7 is-uppercase">
-            <div class="level-start">
-                <div class="level-item">
-                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Tomcat/">Tomcat</a>, <a class="has-link-grey -link" href="/tags/XML/">XML</a>
-                </div>
-            </div>
-        </div>
+<blockquote class="post-copyright">
+    <div class="content">
         
-        
-        
-    </div>
-</div>
+<span class="post-time">
+    最后更新时间：<time datetime="2019-04-21T13:49:17.729Z" itemprop="dateUpdated">2019-04-21 21:49:17</time>
+</span><br>
 
 
-
-
-
-<div class="card card-transparent">
-    <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/04/14/Spring的学习（一）/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">Spring的学习（一）</span>
-            </a>
-        </div>
-        
+        转载注明出处，原文地址：<a href="/2019/03/28/XML&amp;Tomcat/" target="_blank" rel="external">http://yoursite.com/2019/03/28/XML&amp;Tomcat/</a>
         
     </div>
-</div>
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="白马文">
+            白马文
+        </a>
+    </footer>
+</blockquote>
 
-
-</div>
-                
-
-
-
-
-<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
-    
-        
-<div class="card widget">
-    <div class="card-content">
-        <nav class="level">
-            <div class="level-item has-text-centered">
-                <div>
-                    
-                        <figure class="image container is-128x128 has-mb-6">
-                            <img class="is-rounded" src="/images/avatar.png" alt="白马文">
-                        </figure>
-                    
-                    
-                    <p class="is-size-4 is-block">
-                        白马文
-                    </p>
-                    
-                    
-                    <p class="is-size-6 is-block">
-                        生而为人,我很抱歉
-                    </p>
-                    
-                    
-                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
-                        <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>湖北 武汉</span>
-                    </p>
-                    
-                </div>
-            </div>
-        </nav>
-        <nav class="level is-mobile">
-            <div class="level-item has-text-centered is-marginless">
-                <div>
-                    <p class="heading">
-                        文章
-                    </p>
-                    <p class="title has-text-weight-normal">
-                        7
-                    </p>
-                </div>
-            </div>
-            <div class="level-item has-text-centered is-marginless">
-                <div>
-                    <p class="heading">
-                        分类
-                    </p>
-                    <p class="title has-text-weight-normal">
-                        4
-                    </p>
-                </div>
-            </div>
-            <div class="level-item has-text-centered is-marginless">
-                <div>
-                    <p class="heading">
-                        标签
-                    </p>
-                    <p class="title has-text-weight-normal">
-                        6
-                    </p>
-                </div>
-            </div>
-        </nav>
-        <div class="level">
-            <a class="level-item button is-link is-rounded" href="http://github.com/baimawen" target="_blank">
-                关注我</a>
-        </div>
         
         
-        <div class="level is-mobile">
+        <div class="post-footer">
             
-            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/baimawen">
-                
-                <i class="fab fa-github"></i>
-                
-            </a>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tomcat/">Tomcat</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/XML/">XML</a></li></ul>
+
+            <div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/03/28/XML&Tomcat/&title=《XML & Tomcat》 — Baimawen's Blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/03/28/XML&Tomcat/&title=《XML & Tomcat》 — Baimawen's Blog&source=关于XML和Tomcat的学习笔记" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+        </div>
+        
             
-        </div>
-        
-    </div>
-</div>
-    
-        
-<div class="card widget" id="toc">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                目录
-            </h3>
-            <ul class="menu-list"><li>
-        <a class="is-flex" href="#XML-amp-Tomcat">
-        <span class="has-mr-6">1</span>
-        <span>XML &amp; Tomcat</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#查看XML文件">
-        <span class="has-mr-6">1.1</span>
-        <span>查看XML文件</span>
-        </a></li><li>
-        <a class="is-flex" href="#什么是XML">
-        <span class="has-mr-6">1.2</span>
-        <span>什么是XML</span>
-        </a></li><li>
-        <a class="is-flex" href="#和HTML的差异">
-        <span class="has-mr-6">1.3</span>
-        <span>和HTML的差异</span>
-        </a></li><li>
-        <a class="is-flex" href="#定义XML">
-        <span class="has-mr-6">1.4</span>
-        <span>定义XML</span>
-        </a></li><li>
-        <a class="is-flex" href="#XML命名规则">
-        <span class="has-mr-6">1.5</span>
-        <span>XML命名规则</span>
-        </a></li><li>
-        <a class="is-flex" href="#XML-DTD（Document-Type-Definition）文档类型定义">
-        <span class="has-mr-6">1.6</span>
-        <span>XML DTD（Document Type Definition）文档类型定义</span>
-        </a></li><li>
-        <a class="is-flex" href="#XML-Schema">
-        <span class="has-mr-6">1.7</span>
-        <span>XML Schema</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#命名空间的作用">
-        <span class="has-mr-6">1.7.1</span>
-        <span>命名空间的作用</span>
-        </a></li></ul></li><li>
-        <a class="is-flex" href="#XMl解析方式">
-        <span class="has-mr-6">1.8</span>
-        <span>XMl解析方式</span>
-        </a></li><li>
-        <a class="is-flex" href="#Dom4j-基本用法">
-        <span class="has-mr-6">1.9</span>
-        <span>Dom4j 基本用法</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#Dom4j的Xpath使用">
-        <span class="has-mr-6">1.9.1</span>
-        <span>Dom4j的Xpath使用</span>
-        </a></li></ul></li></ul></li><li>
-        <a class="is-flex" href="#Tomcat目录">
-        <span class="has-mr-6">2</span>
-        <span>Tomcat目录</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#配置虚拟路径">
-        <span class="has-mr-6">2.1</span>
-        <span>配置虚拟路径</span>
-        </a></li></ul></li></ul>
-        </div>
-    </div>
-</div>
 
-    
-        
 
-<div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-        <h3 class="menu-label">
-            链接
-        </h3>
-        <ul class="menu-list">
         
-            <li>
-                <a class="level is-mobile" href="https://zhihu.com" target="_blank">
-                    <span class="level-left">
-                        <span class="level-item">知乎</span>
-                    </span>
-                    <span class="level-right">
-                        <span class="level-item tag">zhihu.com</span>
-                    </span>
-                </a>
-            </li>
-        
-            <li>
-                <a class="level is-mobile" href="https://google.com" target="_blank">
-                    <span class="level-left">
-                        <span class="level-item">谷歌</span>
-                    </span>
-                    <span class="level-right">
-                        <span class="level-item tag">google.com</span>
-                    </span>
-                </a>
-            </li>
-        
-        </ul>
-        </div>
     </div>
-</div>
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="prev">
+      <a href="/2019/04/14/Spring的学习（一）/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Spring的学习（一）</h4>
+      </a>
+    </div>
+  
+
+  
+</nav>
 
 
     
-        
-<div class="card widget">
-    <div class="card-content">
-        <h3 class="menu-label">
-            标签云
-        </h3>
-        <a href="/tags/Centos/" style="font-size: 10px;">Centos</a> <a href="/tags/Pig/" style="font-size: 10px;">Pig</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/XML/" style="font-size: 10px;">XML</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a>
-    </div>
-</div>
-
     
+        <aside class="post-widget">
+            <nav class="post-toc-wrap" id="post-toc">
+                <strong>目录</strong>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#XML-amp-Tomcat"><span class="post-toc-number">1.</span> <span class="post-toc-text">XML &amp; Tomcat</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看XML文件"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">查看XML文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#什么是XML"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">什么是XML</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#和HTML的差异"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">和HTML的差异</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#定义XML"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">定义XML</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#XML命名规则"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">XML命名规则</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#XML-DTD（Document-Type-Definition）文档类型定义"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">XML DTD（Document Type Definition）文档类型定义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#XML-Schema"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">XML Schema</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#命名空间的作用"><span class="post-toc-number">1.7.1.</span> <span class="post-toc-text">命名空间的作用</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#XMl解析方式"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">XMl解析方式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Dom4j-基本用法"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">Dom4j 基本用法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Dom4j的Xpath使用"><span class="post-toc-number">1.9.1.</span> <span class="post-toc-text">Dom4j的Xpath使用</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Tomcat目录"><span class="post-toc-number">2.</span> <span class="post-toc-text">Tomcat目录</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#配置虚拟路径"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">配置虚拟路径</span></a></li></ol></li></ol>
+            </nav>
+            <div class="toc-bar"><div>
+        </div></div></aside>
     
-        <div class="column-right-shadow is-hidden-widescreen ">
-        
-            
-<div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                分类
-            </h3>
-            <ul class="menu-list">
-            <li>
-        <a class="level is-marginless" href="/categories/Bigdata/">
-            <span class="level-start">
-                <span class="level-item">Bigdata</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/Java/">
-            <span class="level-start">
-                <span class="level-item">Java</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">2</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/Linux/">
-            <span class="level-start">
-                <span class="level-item">Linux</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/Python/">
-            <span class="level-start">
-                <span class="level-item">Python</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">2</span>
-            </span>
-        </a></li>
-            </ul>
-        </div>
-    </div>
-</div>
-        
-            
-<div class="card widget">
-    <div class="card-content">
-        <h3 class="menu-label">
-            最新文章
-        </h3>
-        
-        <article class="media">
-            
-            <a href="/2019/04/28/Hadoop学习之伪分布式搭建/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hadoop学习之伪分布式搭建">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-27T17:12:08.000Z">2019-04-28</time></div>
-                    <a href="/2019/04/28/Hadoop学习之伪分布式搭建/" class="has-link-black-ter is-size-6">Hadoop学习之伪分布式搭建</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/04/20/Virtualenv虚拟环境/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/img/brand.jpg" alt="Virtualenv虚拟环境">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-20T13:16:32.000Z">2019-04-20</time></div>
-                    <a href="/2019/04/20/Virtualenv虚拟环境/" class="has-link-black-ter is-size-6">Virtualenv虚拟环境</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Python/">Python</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/04/20/Python创建单例模式的三种方法/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/img/black-and-white.jpg" alt="Python创建单例模式的三种方法">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-20T13:14:50.000Z">2019-04-20</time></div>
-                    <a href="/2019/04/20/Python创建单例模式的三种方法/" class="has-link-black-ter is-size-6">Python创建单例模式的三种方法</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Python/">Python</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/04/20/Centos7安装数据库/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/img/apple-iphone-smartphone-desk-2.jpg" alt="Centos7安装数据库">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-20T12:45:55.000Z">2019-04-20</time></div>
-                    <a href="/2019/04/20/Centos7安装数据库/" class="has-link-black-ter is-size-6">Centos7安装数据库</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Linux/">Linux</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/04/20/Pig简单了解/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/img/art-graffiti-wall-dublin.jpg" alt="Pig简单了解">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-20T12:41:43.000Z">2019-04-20</time></div>
-                    <a href="/2019/04/20/Pig简单了解/" class="has-link-black-ter is-size-6">Pig简单了解</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Bigdata/">Bigdata</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-    </div>
-</div>
-
-        
-            <div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-        <h3 class="menu-label">
-            归档
-        </h3>
-        <ul class="menu-list">
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2019/04/">
-                <span class="level-start">
-                    <span class="level-item">四月 2019</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">6</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2019/03/">
-                <span class="level-start">
-                    <span class="level-item">三月 2019</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        </ul>
-        </div>
-    </div>
-</div>
-        
-            <div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                标签
-            </h3>
-            <div class="field is-grouped is-grouped-multiline">
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Centos/">
-                        <span class="tag">Centos</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Pig/">
-                        <span class="tag">Pig</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Spring/">
-                        <span class="tag">Spring</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Tomcat/">
-                        <span class="tag">Tomcat</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/XML/">
-                        <span class="tag">XML</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/设计模式/">
-                        <span class="tag">设计模式</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-            </div>
-        </div>
-    </div>
-</div>
-        
-        </div>
-    
-</div>
-
-                
+</article>
 
 
-
-
-<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
-    
-        
-<div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                分类
-            </h3>
-            <ul class="menu-list">
-            <li>
-        <a class="level is-marginless" href="/categories/Bigdata/">
-            <span class="level-start">
-                <span class="level-item">Bigdata</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/Java/">
-            <span class="level-start">
-                <span class="level-item">Java</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">2</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/Linux/">
-            <span class="level-start">
-                <span class="level-item">Linux</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/Python/">
-            <span class="level-start">
-                <span class="level-item">Python</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">2</span>
-            </span>
-        </a></li>
-            </ul>
-        </div>
-    </div>
-</div>
-    
-        
-<div class="card widget">
-    <div class="card-content">
-        <h3 class="menu-label">
-            最新文章
-        </h3>
-        
-        <article class="media">
-            
-            <a href="/2019/04/28/Hadoop学习之伪分布式搭建/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hadoop学习之伪分布式搭建">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-27T17:12:08.000Z">2019-04-28</time></div>
-                    <a href="/2019/04/28/Hadoop学习之伪分布式搭建/" class="has-link-black-ter is-size-6">Hadoop学习之伪分布式搭建</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/04/20/Virtualenv虚拟环境/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/img/brand.jpg" alt="Virtualenv虚拟环境">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-20T13:16:32.000Z">2019-04-20</time></div>
-                    <a href="/2019/04/20/Virtualenv虚拟环境/" class="has-link-black-ter is-size-6">Virtualenv虚拟环境</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Python/">Python</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/04/20/Python创建单例模式的三种方法/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/img/black-and-white.jpg" alt="Python创建单例模式的三种方法">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-20T13:14:50.000Z">2019-04-20</time></div>
-                    <a href="/2019/04/20/Python创建单例模式的三种方法/" class="has-link-black-ter is-size-6">Python创建单例模式的三种方法</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Python/">Python</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/04/20/Centos7安装数据库/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/img/apple-iphone-smartphone-desk-2.jpg" alt="Centos7安装数据库">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-20T12:45:55.000Z">2019-04-20</time></div>
-                    <a href="/2019/04/20/Centos7安装数据库/" class="has-link-black-ter is-size-6">Centos7安装数据库</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Linux/">Linux</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/04/20/Pig简单了解/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/img/art-graffiti-wall-dublin.jpg" alt="Pig简单了解">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-20T12:41:43.000Z">2019-04-20</time></div>
-                    <a href="/2019/04/20/Pig简单了解/" class="has-link-black-ter is-size-6">Pig简单了解</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Bigdata/">Bigdata</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-    </div>
 </div>
 
+    </main>
+    <footer class="footer ">
     
-        <div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-        <h3 class="menu-label">
-            归档
-        </h3>
-        <ul class="menu-list">
+    <div class="top">
         
-        <li>
-            <a class="level is-marginless" href="/archives/2019/04/">
-                <span class="level-start">
-                    <span class="level-item">四月 2019</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">6</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2019/03/">
-                <span class="level-start">
-                    <span class="level-item">三月 2019</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        </ul>
-        </div>
-    </div>
-</div>
+            <p>
+    <span>Links：</span>
     
-        <div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                标签
-            </h3>
-            <div class="field is-grouped is-grouped-multiline">
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Centos/">
-                        <span class="tag">Centos</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Pig/">
-                        <span class="tag">Pig</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Spring/">
-                        <span class="tag">Spring</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Tomcat/">
-                        <span class="tag">Tomcat</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/XML/">
-                        <span class="tag">XML</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/设计模式/">
-                        <span class="tag">设计模式</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-            </div>
-        </div>
-    </div>
-</div>
+    <span class="blogroll-item">
+        <a href="https://www.lujingtao.com" target="_blank">HOME</a>
+    </span>
     
-    
-</div>
+</p>
 
-            </div>
-        </div>
-    </section>
-    <footer class="footer">
-    <div class="container">
-        <div class="level">
-            <div class="level-start has-text-centered-mobile">
-                <a class="footer-logo is-block has-mb-6" href="/">
-                
-                    <img src="/img/grim.svg" alt="XML &amp; Tomcat" height="28">
-                
-                </a>
-                <p class="is-size-7">
-                &copy; 2019 白马文&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
-                
-                </p>
-            </div>
-            <div class="level-end">
+        
+    </div>
+    
+    <div class="bottom">
+        <p>
+            <span>
+                白马文 &copy; 2017 - 2019
+            </span>
+        		
+           	
             
-                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
-                
-                
-                <p class="control">
-                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
-                        
-                        <i class="fab fa-creative-commons"></i>
-                        
-                    </a>
-                </p>
-                
-                <p class="control">
-                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
-                        
-                        <i class="fab fa-creative-commons-by"></i>
-                        
-                    </a>
-                </p>
-                
-                <p class="control">
-                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="http://github.com/ppoffice/hexo-theme-icarus">
-                        
-                        <i class="fab fa-github"></i>
-                        
-                    </a>
-                </p>
-                
-                </div>
             
-            </div>
-        </div>
+            <span>
+	            Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/codefine/hexo-theme-mellow" target="_blank">mellow</a>
+            </span>
+            
+            
+            
+
+            
+                
+<span class="site-uv" title="总访客量">
+    <i class="icon icon-user"></i>
+    <i class="busuanzi-value" id="busuanzi_value_site_uv"></i>
+</span>
+
+
+<span class="site-pv" title="总访问量">
+    <i class="icon icon-eye"></i>
+    <i class="busuanzi-value" id="busuanzi_value_site_pv"></i>
+</span>
+
+            
+        </p>
     </div>
 </footer>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
-<script>moment.locale("zh-CN");</script>
+
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
 
-    
-    
-    
-    <script src="/js/animation.js"></script>
-    
 
-    
-    
-    
-    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
-    <script src="/js/gallery.js" defer></script>
-    
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/03/28/XML&Tomcat/&title=《XML & Tomcat》 — Baimawen's Blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/03/28/XML&Tomcat/&title=《XML & Tomcat》 — Baimawen's Blog&source=关于XML和Tomcat的学习笔记" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
 
-    
-    
 
-<div id="outdated">
-    <h6>Your browser is out-of-date!</h6>
-    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
-            my browser now </a></p>
-    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAAByklEQVR42u3aS44CMQwFQO5/aUaa1Ugjmmc7CS1UWaGGDpWNFX8ej3g9f9er53+/7T1ZvHBxccfc5+X6z82/nbz18ki4uLgHudfBqxqMrv/ymv7GhouLezNucoz8qoSLi/sd3HzTKgUXF/ee3CT56R2gutuyXA0XF3fAXXU1mXzeWN/FxcUtcp/Flb+15d9xcXGPcJPUpXpxyffMdytkWri4uEe4142QJMDlwxxJGwYXF3c3dzJgkRw4OVJhf1xc3NtwewWOZIdkIKMcyHBxccfcXhsjKX/0xraSES5cXNzd3N52vWtKr3hamBPBxcVdxK0OSO0bpCgcDxcX9wbcvOiZN2CqaU+UseHi4i7iJqWQ62Qmb51OCiK4uLif4lZTkV6jNL8evWml4OLibuPOGyRrh7GiwisuLu5mbjVPqv4yT4eisgsuLu5BbrU5mgematiKAhkuLu4Rbr56hZJJ0aQwkoWLi7uIWw0ovdLGpMXSG+bAxcWdc5Pg1RvAyi89eTqEi4t7kptfR6rXo+YAVnWGCxcX90PcvICS7JwHMlxc3Ptzk0JJb2ArCYW4uLgnuZPgMmnE5vvg4uKe5PYKppPiyOSQuLi4m7k/yaOVjDLPWLAAAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
-<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        outdatedBrowser({
-            bgColor: '#f25648',
-            color: '#ffffff',
-            lowerThan: 'flex'
-        });
-    });
+
+
+    
+    <!-- main-js -->
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="/js/plugins/fastclick.js?v=1.4.3"></script>
+<script type="text/javascript" src="/js/plugins/ios-orientationchange-fix.js?v=1.4.3"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script type="text/javascript" src="/js/method.js?v=1.4.3"></script>
+<script type="text/javascript" src="/js/blog.js?v=1.4.3"></script>
+
+<!-- third-party -->
+
+
+
+
+
+
+<script type="text/javascript" src="/js/plugins/local_search.js?v=1.4.3"></script>
+<script type="text/javascript">
+	var search_path = "search.xml";
+	if (search_path.length === 0) {
+		search_path = "search.xml";
+	}
+	var path = "/" + search_path;
+	searchFunc(path, "local-search-input", "local-search-result");
 </script>
 
 
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
     
     
-<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
+
+
+
+
+
+    <!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
     MathJax.Hub.Config({
-        'HTML-CSS': {
-            matchFontHeight: false
-        },
-        SVG: {
-            matchFontHeight: false
-        },
-        CommonHTML: {
-            matchFontHeight: false
-        },
         tex2jax: {
-            inlineMath: [
-                ['$','$'],
-                ['\\(','\\)']
-            ]
+            inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
         }
     });
-});
 </script>
 
-    
-    
-
-<a id="back-to-top" title="回到顶端" href="javascript:;">
-    <i class="fas fa-chevron-up"></i>
-</a>
-<script src="/js/back-to-top.js" defer></script>
-
-
-    
-    
-
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
-    <script src="/js/clipboard.js" defer></script>
-    
-
-    
-    
-    
-
-
-<script src="/js/main.js" defer></script>
-
-    
-    <div class="searchbox ins-search">
-    <div class="searchbox-container ins-search-container">
-        <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
-            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="searchbox-result-wrapper ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
-    </div>
-</div>
-<script>
-    (function (window) {
-        var INSIGHT_CONFIG = {
-            TRANSLATION: {
-                POSTS: '文章',
-                PAGES: '页面',
-                CATEGORIES: '分类',
-                TAGS: '标签',
-                UNTITLED: '(无标题)',
-            },
-            CONTENT_URL: '/content.json',
-        };
-        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-    })(window);
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
 </script>
-<script src="/js/insight.js" defer></script>
-<link rel="stylesheet" href="/css/search.css">
-<link rel="stylesheet" href="/css/insight.css">
+
+<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+
+
     
 </body>
 </html>
